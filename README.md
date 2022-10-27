@@ -1,6 +1,10 @@
 # data-structure-and-sort-algorithms-snippets
 <p>
-<img alt="" src="https://img.shields.io/github/license/kr4zym3nvn/data-structure-snippets?color=orange&style=for-the-badge" width="111">
+
+<img alt="License" src="https://img.shields.io/github/license/kr4zym3nvn/data-structure-snippets?color=orange&style=for-the-badge" width="111">
+
+<img src="https://img.shields.io/badge/version-1.0.0-o?style=for-the-badge" width="121">
+
 
 </p>
 
