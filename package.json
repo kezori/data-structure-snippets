@@ -32,7 +32,7 @@
       },
       {
         "language": "python",
-        "path": "./snippets/snippets.code-snippets"
+        "path": "./snippets/python.code-snippets"
       },
       {
         "language": "java",
