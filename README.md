@@ -1,9 +1,7 @@
 # data-structure-and-sort-algorithms-snippets
 <p>
 
-<img alt="License" src="https://img.shields.io/github/license/kr4zym3nvn/data-structure-snippets?color=orange&style=for-the-badge" width="111">
-<img alt="Visual Studio Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/kr4zym3nvn.data-structure-snippets?color=g&style=for-the-badge" width="130">
-<img alt="Visual Studio Marketplace Downloads" src="https://img.shields.io/visual-studio-marketplace/d/kr4zym3nvn.data-structure-snippets?color=pink&style=for-the-badge" width="120">
+[<img alt="License" src="https://img.shields.io/github/license/kr4zym3nvn/data-structure-snippets?color=orange&style=for-the-badge" width="111">](https://github.com/kr4zym3nvn/data-structure-snippets/blob/main/LICENSE) [<img alt="Visual Studio Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/kr4zym3nvn.data-structure-snippets?color=g&style=for-the-badge" width="130">](https://marketplace.visualstudio.com/items?itemName=kr4zym3nvn.data-structure-snippets) [<img alt="Visual Studio Marketplace Downloads" src="https://img.shields.io/visual-studio-marketplace/d/kr4zym3nvn.data-structure-snippets?color=pink&style=for-the-badge" width="119">](https://marketplace.visualstudio.com/items?itemName=kr4zym3nvn.data-structure-snippets)
 
 </p>
 
