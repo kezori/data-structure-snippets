@@ -3,6 +3,7 @@
 <img alt="" src="https://img.shields.io/github/license/kr4zym3nvn/data-structure-snippets?color=orange&style=for-the-badge" width="111">
 
 </p>
+
 ### What is this?
 
 This is a collection of snippets for creating data structures and sort alogorithms in C++, C, C#, Java, Python, and JavaScript. The snippets are designed to be used with [VSCode](https://code.visualstudio.com/)
