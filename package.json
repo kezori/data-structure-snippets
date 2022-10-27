@@ -1,0 +1,40 @@
+{
+  "name": "data-structure-snippets",
+  "displayName": "Data Structure Snippets",
+  "description": "Creat Data structure faster than ever",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "cpp",
+        "path": "./snippets/cpp.code-snippets"
+      },
+      {
+        "language": "c",
+        "path": "./snippets/c.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.code-snippets"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "java",
+        "path": "./snippets/java.code-snippets"
+      },
+      {
+        "language": "c#",
+        "path": "./snippets/c#.code-snippets"
+      }
+    ]
+  }
+}
