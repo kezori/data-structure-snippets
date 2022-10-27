@@ -3,6 +3,13 @@
   "displayName": "Data Structure Snippets",
   "description": "Creat Data structure faster than ever",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kr4zym3nvn/data-structure-snippets"
+  },
+  "license": "MIT",
+  "author": "kr4zym3nvn",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.72.0"
   },
