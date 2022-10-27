@@ -4,7 +4,6 @@
   "description": "Creat Data structure faster than ever",
   "version": "1.0.1",
   "author": "Keri Nguyen",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/kr4zym3nvn/data-structure-snippets"
@@ -19,6 +18,7 @@
     "snippets",
     "cpp snippets"
   ],
+  "license": "MIT",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.72.0"
