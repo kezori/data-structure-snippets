@@ -2,9 +2,8 @@
 <p>
 
 <img alt="License" src="https://img.shields.io/github/license/kr4zym3nvn/data-structure-snippets?color=orange&style=for-the-badge" width="111">
-
-<img src="https://img.shields.io/badge/version-1.0.1-o?style=for-the-badge" width="121">
-
+<img alt="Visual Studio Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/kr4zym3nvn.data-structure-snippets?color=g&style=for-the-badge" width="130">
+<img alt="Visual Studio Marketplace Downloads" src="https://img.shields.io/visual-studio-marketplace/d/kr4zym3nvn.data-structure-snippets?color=pink&style=for-the-badge" width="120">
 
 </p>
 
