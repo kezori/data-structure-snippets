@@ -36,18 +36,17 @@ All snippets are prefixed with `{languge}-stack` where language is the language 
 | Prefix         | Code                                         |
 |----------------|----------------------------------------------|
 | `-creat-class` | `Creat Class Stack`                          |
+| `-constructor` | `Creat constructor`                          |
 | `-push`        | `Insert a Node in front`                     |
 | `-pop`         | `Remove a Node in front`                     |
-| `-top`         | `Return value of Node in front`              |
+| `-get-top`     | `Return value of Node in front`              |
 | `-is-empty`    | `Return True if List empty`                  |
 | `-get-size`    | `Return size of the List`                    |
 | `-display`     | `Print value of all Node in the List`        |
 | `-clear`       | `Remove all Node in the List`                |
 | `-reverse`     | `Reverse all Node in the List`               |
-| `-sort`        | `Sort all Node in the List`                  |
-| `-merge`       | `Merge two List`                             |
-| `infix-to-postfix` | `Convert infix to postfix`             |
-| `postfix-evaluate` | `Evaluate postfix expression`           |
+| `-infix-to-postfix` | `Convert infix to postfix`               |
+| `-postfix-evaluate` | `Evaluate postfix expression`            |
 
 
 ### Table of Queue Snippets
@@ -57,17 +56,16 @@ All snippets are prefixed with `{languge}-queue` where language is the language 
 | Prefix         | Code                                         |
 |----------------|----------------------------------------------|
 | `-creat-class` | `Creat Class Queue`                          |
+| `-constructor` | `Creat constructor`                          |
 | `-push`        | `Insert a Node in the back`                  |
 | `-pop`         | `Remove a Node in front`                     |
-| `-front`       | `Return value of Node in front`              |
+| `-get-front`   | `Return value of Node in front`              |
+| `-get-back`    | `Return value of Node in the back`           |
 | `-is-empty`    | `Return True if List empty`                  |
 | `-get-size`    | `Return size of the List`                    |
 | `-display`     | `Print value of all Node in the List`        |
 | `-clear`       | `Remove all Node in the List`                |
 | `-reverse`     | `Reverse all Node in the List`               |
-| `-sort`        | `Sort all Node in the List`                  |
-| `-merge`       | `Merge two List`                             |
-
 
 
 ### Table of Binary Search Tree Snippets
@@ -77,15 +75,21 @@ All snippets are prefixed with `{languge}-bst` where language is the language of
 | Prefix         | Code                                         |
 |----------------|----------------------------------------------|
 | `-creat-class` | `Creat Class BST`                            |
-| `-insert`      | `Insert a Node in the BST`                   |
-| `-remove`      | `Remove a Node in the BST`                   |
-| `-find`        | `Return a Node in the BST`                   |
-| `-is-empty`    | `Return True if BST empty`                   |
-| `-get-size`    | `Return size of the BST`                     |
-| `-display`     | `Print value of all Node in the BST`         |
-| `-clear`       | `Remove all Node in the BST`                 |
+| `-constructor` | `Creat constructor`                          |
+| `-insert-private`| `Creat void insert in private of class`|
+| `-insert-public` | `Insert a Node` |
+| `-delete-private`| `Creat void delete in private of class`|
+| `-delete-public` | `Delete a Node` |
+| `-search-private`| `Creat void search in private of class`|
+| `-search-public` | `Search a Node` |
+| `-inorder-private`      |   |
+| `-preorder-private`     |   |
+| `-postorder-private`    |   |
+| `-inorder-public`       |   |
+| `-preorder-public`      |   |
+| `-postorder-public`     |   |
 
-
+<!-- 
 ### Table of Heap Snippets
 
 All snippets are prefixed with `{languge}-heap` where language is the language of the snippet. For example, the C++ Heap snippets are prefixed with `cpp-heap`.
@@ -278,4 +282,4 @@ All snippets are prefixed with `{languge}-recursion` where language is the langu
 | `counting-sort`     | `bitonic-sort`      |
 | `radix-sort`        | `pancake-sort`      |
 | `heap-sort`         | `tree-sort`         |
-| `bucket-sort`       | `shell-sort`        |
+| `bucket-sort`       | `shell-sort`        | -->
