@@ -1,1036 +1,2143 @@
 {
-    "cpp-ll-creat-class": {
-        "prefix": "cpp-ll-creat-class",
-        "body": [
-          "template <class T>",
-          "class List {",
-          "private:",
-          "    struct Node {",
-          "        T item;",
-          "        Node *next;",
-          "    };",
-          "    Node *head;",
-          "    int size;",
-          "    Node *find(int index) const;",
-          "",
-          "public:",
-          "    List();",
-          "    void pushFront(T);",
-          "    void popFront();",
-          "    void pushBack(T);",
-          "    void popBack();",
-          "    void insert(int, T);",
-          "    void remove(int);",
-          "    bool isEmpty() const;",
-          "    int getSize() const;",
-          "    T retrieve(int) const;",
-          "",
-          "    void display();",
-          "};"
-        ],
-        "description": "cpp-ll-creat-class"
-      },
-
-    "cpp-ll-find":{
-    "prefix": "cpp-ll-find",
-    "body": [
+  "cpp-ll-creat-class": {
+      "prefix": "cpp-ll-creat-class",
+      "body": [
         "template <class T>",
-        "typename List<T>::Node *List<T>::find(int index) const {",
-        "    if (index < 0 || index >= size) {",
-        "        cout << \"Index out of range\" << endl;",
-        "    }",
-        "    Node *p = head;",
-        "    for (int i = 0; i < index; i++) {",
-        "        p = p->next;",
-        "    }",
-        "    return p;",
-        "}"
-    ],
-    "description": "cpp-ll-find"
-    },
-      
-    "cpp-ll-constructor":{
-        "prefix": "cpp-ll-constructor",
-        "body": [
-        "template <class T>",
-        "List<T>::List() {",
-        "    head = NULL;",
-        "    size = 0;",
-        "}"
-        ],
-        "description": "cpp-ll-constructor"
+        "class List {",
+        "private:",
+        "    struct Node {",
+        "        T item;",
+        "        Node *next;",
+        "    };",
+        "    Node *head;",
+        "    int size;",
+        "    Node *find(int index) const;",
+        "",
+        "public:",
+        "    List();",
+        "    void pushFront(T);",
+        "    void popFront();",
+        "    void pushBack(T);",
+        "    void popBack();",
+        "    void insert(int, T);",
+        "    void remove(int);",
+        "    bool isEmpty() const;",
+        "    int getSize() const;",
+        "    T retrieve(int) const;",
+        "",
+        "    void display();",
+        "};"
+      ],
+      "description": "cpp-ll-creat-class"
     },
 
-    "cpp-ll-pushFront":{
-        "prefix": "cpp-ll-pushFront",
-        "body": [
-        "template <class T>",
-        "void List<T>::pushFront(T item) {",
-        "    Node *p = new Node;",
-        "    p->item = item;",
-        "    p->next = head;",
-        "    head = p;",
-        "    size++;",
-        "}"
-        ],
-        "description": "cpp-ll-pushFront"
-    },
+  "cpp-ll-find":{
+  "prefix": "cpp-ll-find",
+  "body": [
+      "template <class T>",
+      "typename List<T>::Node *List<T>::find(int index) const {",
+      "    if (index < 0 || index >= size) {",
+      "        cout << \"Index out of range\" << endl;",
+      "    }",
+      "    Node *p = head;",
+      "    for (int i = 0; i < index; i++) {",
+      "        p = p->next;",
+      "    }",
+      "    return p;",
+      "}"
+  ],
+  "description": "cpp-ll-find"
+  },
+    
+  "cpp-ll-constructor":{
+      "prefix": "cpp-ll-constructor",
+      "body": [
+      "template <class T>",
+      "List<T>::List() {",
+      "    head = NULL;",
+      "    size = 0;",
+      "}"
+      ],
+      "description": "cpp-ll-constructor"
+  },
 
-    "cpp-ll-popFront":{
-        "prefix": "cpp-ll-popFront",
-        "body": [
-        "template <class T>",
-        "void List<T>::popFront() {",
-        "    if (isEmpty()) {",
-        "        cout << \"List is empty\" << endl;",
-        "    }",
-        "    Node *p = head;",
-        "    head = head->next;",
-        "    delete p;",
-        "    size--;",
-        "}"
-        ],
-        "description": "cpp-ll-popFront"
-    },
+  "cpp-ll-pushFront":{
+      "prefix": "cpp-ll-pushFront",
+      "body": [
+      "template <class T>",
+      "void List<T>::pushFront(T item) {",
+      "    Node *p = new Node;",
+      "    p->item = item;",
+      "    p->next = head;",
+      "    head = p;",
+      "    size++;",
+      "}"
+      ],
+      "description": "cpp-ll-pushFront"
+  },
 
-    "cpp-ll-pushBack":{
-        "prefix": "cpp-ll-pushBack",
-        "body": [
+  "cpp-ll-popFront":{
+      "prefix": "cpp-ll-popFront",
+      "body": [
+      "template <class T>",
+      "void List<T>::popFront() {",
+      "    if (isEmpty()) {",
+      "        cout << \"List is empty\" << endl;",
+      "    }",
+      "    Node *p = head;",
+      "    head = head->next;",
+      "    delete p;",
+      "    size--;",
+      "}"
+      ],
+      "description": "cpp-ll-popFront"
+  },
+
+  "cpp-ll-pushBack":{
+      "prefix": "cpp-ll-pushBack",
+      "body": [
+      "template <class T>",
+      "void List<T>::pushBack(T item) {",
+      "    Node *p = new Node;",
+      "    p->item = item;",
+      "    p->next = NULL;",
+      "    if (isEmpty()) {",
+      "        head = p;",
+      "    } else {",
+      "        Node *q = find(size - 1);",
+      "        q->next = p;",
+      "    }",
+      "    size++;",
+      "}"
+      ],
+      "description": "cpp-ll-pushBack"
+  },
+
+  "cpp-ll-popBack":{
+      "prefix": "cpp-ll-popBack",
+      "body": [
+      "template <class T>",
+      "void List<T>::popBack() {",
+      "    if (isEmpty()) {",
+      "        cout << \"List is empty\" << endl;",
+      "    }",
+      "    if (size == 1) {",
+      "        delete head;",
+      "        head = NULL;",
+      "    } else {",
+      "        Node *p = find(size - 2);",
+      "        delete p->next;",
+      "        p->next = NULL;",
+      "    }",
+      "    size--;",
+      "}"
+      ],
+      "description": "cpp-ll-popBack"
+  },
+
+  "cpp-ll-insert":{
+      "prefix": "cpp-ll-insert",
+      "body": [
+      "template <class T>",
+      "void List<T>::insert(int index, T item) {",
+      "    if (index < 0 || index > size) {",
+      "        cout << \"Index out of range\" << endl;",
+      "    }",
+      "    if (index == 0) {",
+      "        pushFront(item);",
+      "    } else if (index == size) {",
+      "        pushBack(item);",
+      "    } else {",
+      "        Node *p = find(index - 1);",
+      "        Node *q = new Node;",
+      "        q->item = item;",
+      "        q->next = p->next;",
+      "        p->next = q;",
+      "        size++;",
+      "    }",
+      "}"
+      ],
+      "description": "cpp-ll-insert"
+  },
+
+  "cpp-ll-remove":{
+      "prefix": "cpp-ll-remove",
+      "body": [
+      "template <class T>",
+      "void List<T>::remove(int index) {",
+      "    if (index < 0 || index >= size) {",
+      "        cout << \"Index out of range\" << endl;",
+      "    }",
+      "    if (index == 0) {",
+      "        popFront();",
+      "    } else if (index == size - 1) {",
+      "        popBack();",
+      "    } else {",
+      "        Node *p = find(index - 1);",
+      "        Node *q = p->next;",
+      "        p->next = q->next;",
+      "        delete q;",
+      "        size--;",
+      "    }",
+      "}"
+      ],
+      "description": "cpp-ll-remove"
+  },
+
+  "cpp-ll-isEmpty":{
+      "prefix": "cpp-ll-isEmpty",
+      "body": [
+      "template <class T>",
+      "bool List<T>::isEmpty() const {",
+      "    return size == 0;",
+      "}"
+      ],
+      "description": "cpp-ll-isEmpty"
+  },
+
+  "cpp-ll-getSize":{
+      "prefix": "cpp-ll-getSize",
+      "body": [
+      "template <class T>",
+      "int List<T>::getSize() const {",
+      "    return size;",
+      "}"
+      ],
+      "description": "cpp-ll-getSize"
+  },
+
+  "cpp-ll-retrieve":{
+      "prefix": "cpp-ll-retrieve",
+      "body": [
+      "template <class T>",
+      "T List<T>::retrieve(int index) const {",
+      "    if (index < 0 || index >= size) {",
+      "        cout << \"Index out of range\" << endl;",
+      "    }",
+      "    Node *p = find(index);",
+      "    return p->item;",
+      "}"
+      ],
+      "description": "cpp-ll-retrieve"
+  },
+
+  "cpp-ll-display": {
+      "prefix": "cpp-ll-display",
+      "body": [
+      "template <class T>",
+      "void List<T>::display() const {",
+      "    Node *p = head;",
+      "    while (p != NULL) {",
+      "        cout << p->item << \" \";",
+      "        p = p->next;",
+      "    }",
+      "    cout << endl;",
+      "}"
+      ],
+      "description": "cpp-ll-display"
+  },
+
+  "cpp-stack-creat-class": {
+      "prefix": "cpp-ll-creat-class",
+      "body": [
         "template <class T>",
-        "void List<T>::pushBack(T item) {",
-        "    Node *p = new Node;",
-        "    p->item = item;",
-        "    p->next = NULL;",
-        "    if (isEmpty()) {",
-        "        head = p;",
+        "class Stack {",
+        "private:",
+        "    struct Node {",
+        "        T item;",
+        "        Node *next;",
+        "    };",
+        "    int size;",
+        "    Node *head;",
+        "",
+        "public:",
+        "    Stack();",
+        "    int getSize() const;",
+        "    void push(T);",
+        "    void pop();",
+        "    void pop(T &);",
+        "    bool isEmpty() const;",
+        "    T getTop() const;",
+        "};"
+      ],
+      "description": "cpp-stack-creat-class"
+  },
+
+  "cpp-stack-creat-constructor": {
+      "prefix": "cpp-stack-creat-constructor",
+      "body": [
+      "template <class T>",
+      "Stack<T>::Stack() {",
+      "    size = 0;",
+      "    head = NULL;",
+      "}"
+      ],
+      "description": "cpp-stack-creat-constructor"
+  },
+
+  "cpp-stack-push": {
+      "prefix": "cpp-stack-push",
+      "body": [
+      "template <class T>",
+      "void Stack<T>::push(T item) {",
+      "    Node *p = new Node;",
+      "    p->item = item;",
+      "    p->next = head;",
+      "    head = p;",
+      "    size++;",
+      "}"
+      ],
+      "description": "cpp-stack-push"
+  },
+
+  "cpp-stack-pop": {
+      "prefix": "cpp-stack-pop",
+      "body": [
+      "template <class T>",
+      "void Stack<T>::pop() {",
+      "    if (isEmpty()) {",
+      "        cout << \"Stack is empty\" << endl;",
+      "    }",
+      "    Node *p = head;",
+      "    head = head->next;",
+      "    delete p;",
+      "    size--;",
+      "}"
+      ],
+      "description": "cpp-stack-pop"
+  },
+
+  "cpp-stack-pop2": {
+      "prefix": "cpp-stack-pop2",
+      "body": [
+      "template <class T>",
+      "void Stack<T>::pop(T &item) {",
+      "    if (isEmpty()) {",
+      "        cout << \"Stack is empty\" << endl;",
+      "    }",
+      "    Node *p = head;",
+      "    head = head->next;",
+      "    item = p->item;",
+      "    delete p;",
+      "    size--;",
+      "}"
+      ],
+      "description": "cpp-stack-pop2"
+  },
+
+  "cpp-stack-isEmpty": {
+      "prefix": "cpp-stack-isEmpty",
+      "body": [
+      "template <class T>",
+      "bool Stack<T>::isEmpty() const {",
+      "    return size == 0;",
+      "}"
+      ],
+      "description": "cpp-stack-isEmpty"
+  },
+
+  "cpp-stack-getSize": {
+      "prefix": "cpp-stack-getSize",
+      "body": [
+      "template <class T>",
+      "int Stack<T>::getSize() const {",
+      "    return size;",
+      "}"
+      ],
+      "description": "cpp-stack-getSize"
+  },
+
+  "cpp-stack-getTop": {
+      "prefix": "cpp-stack-getTop",
+      "body": [
+      "template <class T>",
+      "T Stack<T>::getTop() const {",
+      "    if (isEmpty()) {",
+      "        cout << \"Stack is empty\" << endl;",
+      "    }",
+      "    return head->item;",
+      "}"
+      ],
+      "description": "cpp-stack-getTop"
+  },
+
+  "cpp-stack-display": {
+      "prefix": "cpp-stack-display",
+      "body": [
+      "template <class T>",
+      "void Stack<T>::display() const {",
+      "    Node *p = head;",
+      "    while (p != NULL) {",
+      "        cout << p->item << \" \";",
+      "        p = p->next;",
+      "    }",
+      "    cout << endl;",
+      "}"
+      ],
+      "description": "cpp-stack-display"
+  },
+
+  "cpp-stack-reverse": {
+      "prefix": "cpp-stack-reverse",
+      "body": [
+      "template <class T>",
+      "void Stack<T>::reverse() {",
+      "    Stack<T> temp;",
+      "    while (!isEmpty()) {",
+      "        temp.push(getTop());",
+      "        pop();",
+      "    }",
+      "    while (!temp.isEmpty()) {",
+      "        push(temp.getTop());",
+      "        temp.pop();",
+      "    }",
+      "}"
+      ],
+      "description": "cpp-stack-reverse"
+  },
+
+  "cpp-stack-reverse2": {
+      "prefix": "cpp-stack-reverse2",
+      "body": [
+      "template <class T>",
+      "void Stack<T>::reverse() {",
+      "    Stack<T> temp;",
+      "    T item;",
+      "    while (!isEmpty()) {",
+      "        pop(item);",
+      "        temp.push(item);",
+      "    }",
+      "    while (!temp.isEmpty()) {",
+      "        temp.pop(item);",
+      "        push(item);",
+      "    }",
+      "}"
+      ],
+      "description": "cpp-stack-reverse2"
+  },
+
+  "cpp-stack-infix-to-postfix": {
+      "prefix": "cpp-stack-infix-to-postfix",
+      "body": [
+      "template <class T>",
+      "void Stack<T>::infixToPostfix(string infix) {",
+      "    Stack<char> temp;",
+      "    string postfix = \"\";",
+      "    for (int i = 0; i < infix.length(); i++) {",
+      "        if (infix[i] == ' ') {",
+      "            continue;",
+      "        }",
+      "        if (infix[i] == '(') {",
+      "            temp.push(infix[i]);",
+      "        }",
+      "        else if (infix[i] == ')') {",
+      "            while (temp.getTop() != '(') {",
+      "                postfix += temp.getTop();",
+      "                temp.pop();",
+      "            }",
+      "            temp.pop();",
+      "        }",
+      "        else if (infix[i] == '+' || infix[i] == '-' || infix[i] == '*' || infix[i] == '/') {",
+      "            while (!temp.isEmpty() && temp.getTop() != '(' && precedence(infix[i]) <= precedence(temp.getTop())) {",
+      "                postfix += temp.getTop();",
+      "                temp.pop();",
+      "            }",
+      "            temp.push(infix[i]);",
+      "        }",
+      "        else {",
+      "            postfix += infix[i];",
+      "        }",
+      "    }",
+      "    while (!temp.isEmpty()) {",
+      "        postfix += temp.getTop();",
+      "        temp.pop();",
+      "    }",
+      "    cout << postfix << endl;",
+      "}"
+      ],
+      "description": "cpp-stack-infix-to-postfix"
+  },
+
+  "cpp-stack-infix-to-postfix2": {
+      "prefix": "cpp-stack-infix-to-postfix2",
+      "body": [
+        "template <class T>",
+        "int Stack<T>::percentage(char op)",
+        "{",
+        "    if (op == '+' || op == '-') {",
+        "        return 1;",
+        "    } else if (op == '*' || op == '/') {",
+        "        return 2;",
+        "    } else if (op == '^') {",
+        "        return 3;",
         "    } else {",
-        "        Node *q = find(size - 1);",
-        "        q->next = p;",
+        "        return 0;",
         "    }",
-        "    size++;",
-        "}"
-        ],
-        "description": "cpp-ll-pushBack"
-    },
-
-    "cpp-ll-popBack":{
-        "prefix": "cpp-ll-popBack",
-        "body": [
+        "}",
+        "",
         "template <class T>",
-        "void List<T>::popBack() {",
-        "    if (isEmpty()) {",
-        "        cout << \"List is empty\" << endl;",
-        "    }",
-        "    if (size == 1) {",
-        "        delete head;",
-        "        head = NULL;",
-        "    } else {",
-        "        Node *p = find(size - 2);",
-        "        delete p->next;",
-        "        p->next = NULL;",
-        "    }",
-        "    size--;",
-        "}"
-        ],
-        "description": "cpp-ll-popBack"
-    },
-
-    "cpp-ll-insert":{
-        "prefix": "cpp-ll-insert",
-        "body": [
-        "template <class T>",
-        "void List<T>::insert(int index, T item) {",
-        "    if (index < 0 || index > size) {",
-        "        cout << \"Index out of range\" << endl;",
-        "    }",
-        "    if (index == 0) {",
-        "        pushFront(item);",
-        "    } else if (index == size) {",
-        "        pushBack(item);",
-        "    } else {",
-        "        Node *p = find(index - 1);",
-        "        Node *q = new Node;",
-        "        q->item = item;",
-        "        q->next = p->next;",
-        "        p->next = q;",
-        "        size++;",
-        "    }",
-        "}"
-        ],
-        "description": "cpp-ll-insert"
-    },
-
-    "cpp-ll-remove":{
-        "prefix": "cpp-ll-remove",
-        "body": [
-        "template <class T>",
-        "void List<T>::remove(int index) {",
-        "    if (index < 0 || index >= size) {",
-        "        cout << \"Index out of range\" << endl;",
-        "    }",
-        "    if (index == 0) {",
-        "        popFront();",
-        "    } else if (index == size - 1) {",
-        "        popBack();",
-        "    } else {",
-        "        Node *p = find(index - 1);",
-        "        Node *q = p->next;",
-        "        p->next = q->next;",
-        "        delete q;",
-        "        size--;",
-        "    }",
-        "}"
-        ],
-        "description": "cpp-ll-remove"
-    },
-
-    "cpp-ll-isEmpty":{
-        "prefix": "cpp-ll-isEmpty",
-        "body": [
-        "template <class T>",
-        "bool List<T>::isEmpty() const {",
-        "    return size == 0;",
-        "}"
-        ],
-        "description": "cpp-ll-isEmpty"
-    },
-
-    "cpp-ll-getSize":{
-        "prefix": "cpp-ll-getSize",
-        "body": [
-        "template <class T>",
-        "int List<T>::getSize() const {",
-        "    return size;",
-        "}"
-        ],
-        "description": "cpp-ll-getSize"
-    },
-
-    "cpp-ll-retrieve":{
-        "prefix": "cpp-ll-retrieve",
-        "body": [
-        "template <class T>",
-        "T List<T>::retrieve(int index) const {",
-        "    if (index < 0 || index >= size) {",
-        "        cout << \"Index out of range\" << endl;",
-        "    }",
-        "    Node *p = find(index);",
-        "    return p->item;",
-        "}"
-        ],
-        "description": "cpp-ll-retrieve"
-    },
-
-    "cpp-ll-display": {
-        "prefix": "cpp-ll-display",
-        "body": [
-        "template <class T>",
-        "void List<T>::display() const {",
-        "    Node *p = head;",
-        "    while (p != NULL) {",
-        "        cout << p->item << \" \";",
-        "        p = p->next;",
-        "    }",
-        "    cout << endl;",
-        "}"
-        ],
-        "description": "cpp-ll-display"
-    },
-
-    "cpp-stack-creat-class": {
-        "prefix": "cpp-ll-creat-class",
-        "body": [
-          "template <class T>",
-          "class Stack {",
-          "private:",
-          "    struct Node {",
-          "        T item;",
-          "        Node *next;",
-          "    };",
-          "    int size;",
-          "    Node *head;",
-          "",
-          "public:",
-          "    Stack();",
-          "    int getSize() const;",
-          "    void push(T);",
-          "    void pop();",
-          "    void pop(T &);",
-          "    bool isEmpty() const;",
-          "    T getTop() const;",
-          "};"
-        ],
-        "description": "cpp-stack-creat-class"
-    },
-
-    "cpp-stack-creat-constructor": {
-        "prefix": "cpp-stack-creat-constructor",
-        "body": [
-        "template <class T>",
-        "Stack<T>::Stack() {",
-        "    size = 0;",
-        "    head = NULL;",
-        "}"
-        ],
-        "description": "cpp-stack-creat-constructor"
-    },
-
-    "cpp-stack-push": {
-        "prefix": "cpp-stack-push",
-        "body": [
-        "template <class T>",
-        "void Stack<T>::push(T item) {",
-        "    Node *p = new Node;",
-        "    p->item = item;",
-        "    p->next = head;",
-        "    head = p;",
-        "    size++;",
-        "}"
-        ],
-        "description": "cpp-stack-push"
-    },
-
-    "cpp-stack-pop": {
-        "prefix": "cpp-stack-pop",
-        "body": [
-        "template <class T>",
-        "void Stack<T>::pop() {",
-        "    if (isEmpty()) {",
-        "        cout << \"Stack is empty\" << endl;",
-        "    }",
-        "    Node *p = head;",
-        "    head = head->next;",
-        "    delete p;",
-        "    size--;",
-        "}"
-        ],
-        "description": "cpp-stack-pop"
-    },
-
-    "cpp-stack-pop2": {
-        "prefix": "cpp-stack-pop2",
-        "body": [
-        "template <class T>",
-        "void Stack<T>::pop(T &item) {",
-        "    if (isEmpty()) {",
-        "        cout << \"Stack is empty\" << endl;",
-        "    }",
-        "    Node *p = head;",
-        "    head = head->next;",
-        "    item = p->item;",
-        "    delete p;",
-        "    size--;",
-        "}"
-        ],
-        "description": "cpp-stack-pop2"
-    },
-
-    "cpp-stack-isEmpty": {
-        "prefix": "cpp-stack-isEmpty",
-        "body": [
-        "template <class T>",
-        "bool Stack<T>::isEmpty() const {",
-        "    return size == 0;",
-        "}"
-        ],
-        "description": "cpp-stack-isEmpty"
-    },
-
-    "cpp-stack-getSize": {
-        "prefix": "cpp-stack-getSize",
-        "body": [
-        "template <class T>",
-        "int Stack<T>::getSize() const {",
-        "    return size;",
-        "}"
-        ],
-        "description": "cpp-stack-getSize"
-    },
-
-    "cpp-stack-getTop": {
-        "prefix": "cpp-stack-getTop",
-        "body": [
-        "template <class T>",
-        "T Stack<T>::getTop() const {",
-        "    if (isEmpty()) {",
-        "        cout << \"Stack is empty\" << endl;",
-        "    }",
-        "    return head->item;",
-        "}"
-        ],
-        "description": "cpp-stack-getTop"
-    },
-
-    "cpp-stack-display": {
-        "prefix": "cpp-stack-display",
-        "body": [
-        "template <class T>",
-        "void Stack<T>::display() const {",
-        "    Node *p = head;",
-        "    while (p != NULL) {",
-        "        cout << p->item << \" \";",
-        "        p = p->next;",
-        "    }",
-        "    cout << endl;",
-        "}"
-        ],
-        "description": "cpp-stack-display"
-    },
-
-    "cpp-stack-reverse": {
-        "prefix": "cpp-stack-reverse",
-        "body": [
-        "template <class T>",
-        "void Stack<T>::reverse() {",
-        "    Stack<T> temp;",
-        "    while (!isEmpty()) {",
-        "        temp.push(getTop());",
-        "        pop();",
-        "    }",
-        "    while (!temp.isEmpty()) {",
-        "        push(temp.getTop());",
-        "        temp.pop();",
-        "    }",
-        "}"
-        ],
-        "description": "cpp-stack-reverse"
-    },
-
-    "cpp-stack-reverse2": {
-        "prefix": "cpp-stack-reverse2",
-        "body": [
-        "template <class T>",
-        "void Stack<T>::reverse() {",
-        "    Stack<T> temp;",
-        "    T item;",
-        "    while (!isEmpty()) {",
-        "        pop(item);",
-        "        temp.push(item);",
-        "    }",
-        "    while (!temp.isEmpty()) {",
-        "        temp.pop(item);",
-        "        push(item);",
-        "    }",
-        "}"
-        ],
-        "description": "cpp-stack-reverse2"
-    },
-
-    "cpp-stack-infix-to-postfix": {
-        "prefix": "cpp-stack-infix-to-postfix",
-        "body": [
-        "template <class T>",
-        "void Stack<T>::infixToPostfix(string infix) {",
-        "    Stack<char> temp;",
+        "string Stack<T>::infixToPostfix(string infix)",
+        "{",
         "    string postfix = \"\";",
         "    for (int i = 0; i < infix.length(); i++) {",
-        "        if (infix[i] == ' ') {",
-        "            continue;",
-        "        }",
         "        if (infix[i] == '(') {",
-        "            temp.push(infix[i]);",
+        "            push(infix[i]);",
         "        }",
         "        else if (infix[i] == ')') {",
-        "            while (temp.getTop() != '(') {",
-        "                postfix += temp.getTop();",
-        "                temp.pop();",
+        "            while (getTop() != '(') {",
+        "                postfix += getTop();",
+        "                pop();",
         "            }",
-        "            temp.pop();",
-        "        }",
-        "        else if (infix[i] == '+' || infix[i] == '-' || infix[i] == '*' || infix[i] == '/') {",
-        "            while (!temp.isEmpty() && temp.getTop() != '(' && precedence(infix[i]) <= precedence(temp.getTop())) {",
-        "                postfix += temp.getTop();",
-        "                temp.pop();",
+        "            pop();",
+        "        } else if (infix[i] == '+' || infix[i] == '-' || infix[i] == '*' || infix[i] == '/' || infix[i] == '^') {",
+        "            if (isEmpty() || percentage(infix[i]) > percentage(getTop())) {",
+        "                push(infix[i]);",
+        "            } else {",
+        "                while (!isEmpty() && percentage(infix[i]) <= percentage(getTop()))",
+        "                {",
+        "                    postfix += getTop();",
+        "                    pop();",
+        "                }",
+        "                push(infix[i]);",
         "            }",
-        "            temp.push(infix[i]);",
-        "        }",
-        "        else {",
+        "        } else {",
         "            postfix += infix[i];",
         "        }",
         "    }",
-        "    while (!temp.isEmpty()) {",
-        "        postfix += temp.getTop();",
-        "        temp.pop();",
+        "    while (!isEmpty()) {",
+        "        postfix += getTop();",
+        "        pop();",
         "    }",
-        "    cout << postfix << endl;",
+        "    return postfix;",
         "}"
-        ],
-        "description": "cpp-stack-infix-to-postfix"
-    },
+      ],
+      "description": "cpp-stack-infix-to-postfix"
+  },
 
-    "cpp-stack-infix-to-postfix2": {
-        "prefix": "cpp-stack-infix-to-postfix2",
-        "body": [
-          "template <class T>",
-          "int Stack<T>::percentage(char op)",
-          "{",
-          "    if (op == '+' || op == '-') {",
-          "        return 1;",
-          "    } else if (op == '*' || op == '/') {",
-          "        return 2;",
-          "    } else if (op == '^') {",
-          "        return 3;",
-          "    } else {",
-          "        return 0;",
-          "    }",
-          "}",
-          "",
-          "template <class T>",
-          "string Stack<T>::infixToPostfix(string infix)",
-          "{",
-          "    string postfix = \"\";",
-          "    for (int i = 0; i < infix.length(); i++) {",
-          "        if (infix[i] == '(') {",
-          "            push(infix[i]);",
-          "        }",
-          "        else if (infix[i] == ')') {",
-          "            while (getTop() != '(') {",
-          "                postfix += getTop();",
-          "                pop();",
-          "            }",
-          "            pop();",
-          "        } else if (infix[i] == '+' || infix[i] == '-' || infix[i] == '*' || infix[i] == '/' || infix[i] == '^') {",
-          "            if (isEmpty() || percentage(infix[i]) > percentage(getTop())) {",
-          "                push(infix[i]);",
-          "            } else {",
-          "                while (!isEmpty() && percentage(infix[i]) <= percentage(getTop()))",
-          "                {",
-          "                    postfix += getTop();",
-          "                    pop();",
-          "                }",
-          "                push(infix[i]);",
-          "            }",
-          "        } else {",
-          "            postfix += infix[i];",
-          "        }",
-          "    }",
-          "    while (!isEmpty()) {",
-          "        postfix += getTop();",
-          "        pop();",
-          "    }",
-          "    return postfix;",
-          "}"
-        ],
-        "description": "cpp-stack-infix-to-postfix"
-    },
+  "cpp-stack-postfix-evaluate": {
+      "prefix": "cpp-stack-pointer-postfix-evaluate",
+      "body": [
+      "template <class T>",
+      "int Stack<T>::postfixEvaluate(string postfix) {",
+      "    Stack<int> temp;",
+      "    int op1, op2;",
+      "    for (int i = 0; i < postfix.length(); i++) {",
+      "        if (postfix[i] == ' ') {",
+      "            continue;",
+      "        }",
+      "        if (postfix[i] == '+' || postfix[i] == '-' || postfix[i] == '*' || postfix[i] == '/') {",
+      "            temp.pop(op2);",
+      "            temp.pop(op1);",
+      "            if (postfix[i] == '+') {",
+      "                temp.push(op1 + op2);",
+      "            } else if (postfix[i] == '-') {",
+      "                temp.push(op1 - op2);",
+      "            } else if (postfix[i] == '*') {",
+      "                temp.push(op1 * op2);",
+      "            } else if (postfix[i] == '/') {",
+      "                temp.push(op1 / op2);",
+      "            }",
+      "        } else {",
+      "            temp.push(postfix[i] - '0');",
+      "        }",
+      "    }",
+      "    int result;",
+      "    temp.pop(result);",
+      "    return result;",
+      "}"
+      ],
+      "description": "cpp-stack-pointer-postfix-evaluate"
+  },
 
-    "cpp-stack-postfix-evaluate": {
-        "prefix": "cpp-stack-pointer-postfix-evaluate",
-        "body": [
+  "cpp-stack-postfix-evaluate2": {
+      "prefix": "cpp-stack-postfix-evaluate2",
+      "body": [
         "template <class T>",
-        "int Stack<T>::postfixEvaluate(string postfix) {",
-        "    Stack<int> temp;",
-        "    int op1, op2;",
-        "    for (int i = 0; i < postfix.length(); i++) {",
-        "        if (postfix[i] == ' ') {",
+        "int Stack<T>::calculatePostfix(string postFix) {",
+        "    Stack<int> s;",
+        "    for (int i = 0; i < postFix.length(); i++) {",
+        "        if (postFix[i] == ' ')",
+        "            continue;",
+        "        else if (postFix[i] == '+') {",
+        "            int a, b;",
+        "            s.pop(a);",
+        "            s.pop(b);",
+        "            s.push(a + b);",
+        "        }",
+        "        else if (postFix[i] == '-') {",
+        "            int a, b;",
+        "            s.pop(a);",
+        "            s.pop(b);",
+        "            s.push(b - a);",
+        "        }",
+        "        else if (postFix[i] == '*') {",
+        "            int a, b;",
+        "            s.pop(a);",
+        "            s.pop(b);",
+        "            s.push(a * b);",
+        "        }",
+        "        else if (postFix[i] == '/') {",
+        "            int a, b;",
+        "            s.pop(a);",
+        "            s.pop(b);",
+        "            s.push(b / a);",
+        "        }",
+        "        else {",
+        "            int a = postFix[i] - '0';",
+        "            s.push(a);",
+        "        }",
+        "    }",
+        "    return s.getTop();",
+        "}"
+      ],
+      "description": "cpp-stack-postfix-evaluate2"
+  },
+
+  "cpp-queue-creat-class": {
+      "prefix": "cpp-queue-creat-class",
+      "body": [
+        "template <class T>",
+        "class Queue",
+        "{",
+        "private:",
+        "    struct node {",
+        "        T item;",
+        "        node *next;",
+        "    };",
+        "    node *head;",
+        "    node *tail;",
+        "public:",
+        "    Queue();",
+        "    void push(T item);",
+        "    void pop();",
+        "    ",
+        "    int getSize();",
+        "    bool isEmpty();",
+        "    T getFront();",
+        "    T getBack();",
+        "};"
+      ],
+      "description": "cpp-queue-creat-class"
+  },
+
+  "cpp-queue-constructor": {
+      "prefix": "cpp-queue-constructor",
+      "body": [
+        "template <class T>",
+        "Queue<T>::Queue() {",
+        "    head = NULL;",
+        "    tail = NULL;",
+        "}"
+      ],
+      "description": "cpp-queue-constructor"
+  },
+  
+  "cpp-queue-push": {
+      "prefix": "cpp-queue-push",
+      "body": [
+        "template <class T>",
+        "void Queue<T>::push(T item) {",
+        "    node *newNode = new node;",
+        "    newNode->item = item;",
+        "    newNode->next = NULL;",
+        "    if (isEmpty()) {",
+        "        head = newNode;",
+        "        tail = newNode;",
+        "    } else {",
+        "        tail->next = newNode;",
+        "        tail = newNode;",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-queue-push"
+  },
+
+  "cpp-queue-pop": {
+      "prefix": "cpp-queue-pop",
+      "body": [
+        "template <class T>",
+        "void Queue<T>::pop() {",
+        "    if (isEmpty()) {",
+        "        return;",
+        "    }",
+        "    node *temp = head;",
+        "    head = head->next;",
+        "    delete temp;",
+        "}"
+      ],
+      "description": "cpp-queue-pop"
+  },
+
+  "cpp-queue-getSize": {
+      "prefix": "cpp-queue-getSize",
+      "body": [
+        "template <class T>",
+        "int Queue<T>::getSize() {",
+        "    int count = 0;",
+        "    node *temp = head;",
+        "    while (temp != NULL) {",
+        "        count++;",
+        "        temp = temp->next;",
+        "    }",
+        "    return count;",
+        "}"
+      ],
+      "description": "cpp-queue-getSize"
+  },
+
+  "cpp-queue-isEmpty": {
+      "prefix": "cpp-queue-isEmpty",
+      "body": [
+        "template <class T>",
+        "bool Queue<T>::isEmpty() {",
+        "    return head == NULL;",
+        "}"
+      ],
+      "description": "cpp-queue-isEmpty"
+  },
+
+  "cpp-queue-getFront": {
+      "prefix": "cpp-queue-getFront",
+      "body": [
+        "template <class T>",
+        "T Queue<T>::getFront() {",
+        "    return head->item;",
+        "}"
+      ],
+      "description": "cpp-queue-getFront"
+  },
+
+  "cpp-queue-getBack": {
+      "prefix": "cpp-queue-getBack",
+      "body": [
+        "template <class T>",
+        "T Queue<T>::getBack() {",
+        "    return tail->item;",
+        "}"
+      ],
+      "description": "cpp-queue-getBack"
+  },
+
+  "cpp-queue-clear": {
+      "prefix": "cpp-queue-clear",
+      "body": [
+        "template <class T>",
+        "void Queue<T>::clear() {",
+        "    while (!isEmpty()) {",
+        "        pop();",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-queue-clear"
+  },
+  
+  "cpp-queue-display": {
+      "prefix": "cpp-queue-display",
+      "body": [
+        "template <class T>",
+        "void Queue<T>::display() {",
+        "    node *temp = head;",
+        "    while (temp != NULL) {",
+        "        cout << temp->item << \" \";",
+        "        temp = temp->next;",
+        "    }",
+        "    cout << endl;",
+        "}"
+      ],
+      "description": "cpp-queue-display"
+  },
+  
+  "cpp-queue-reverse": {
+      "prefix": "cpp-queue-reverse",
+      "body": [
+        "template <class T>",
+        "void Queue<T>::reverse() {",
+        "    if (isEmpty()) {",
+        "        return;",
+        "    }",
+        "    node *temp = head;",
+        "    node *prev = NULL;",
+        "    node *next = NULL;",
+        "    while (temp != NULL) {",
+        "        next = temp->next;",
+        "        temp->next = prev;",
+        "        prev = temp;",
+        "        temp = next;",
+        "    }",
+        "    head = prev;",
+        "}"
+      ],
+      "description": "cpp-queue-reverse"
+  },
+
+  "cpp-bst-creat-class": {
+      "prefix": "cpp-bst-creat-class",
+      "body": [
+        "template <class T>",
+        "class BST",
+        "{",
+        "private:",
+        "    struct node {",
+        "        T item;",
+        "        node *left;",
+        "        node *right;",
+        "    };",
+        "    node *root;",
+        "    void insert(T item, node *& leaf);",
+        "    void delete(T item, node *& leaf);",
+        "    void destroyTree(node *& leaf);",
+        "    node *search(int item, node* leaf)",
+        "    void inOrder(node *root);",
+        "    void preOrder(node *root);",
+        "    void postOrder(node *root);",
+        "public:",
+        "    BST();",
+        "    void insert(T item);",
+        "    void delete(T item);",
+        "    void destroyTree();",
+        "    node *search(int item);",
+        "    void printinOrder();",
+        "    void printpreOrder();",
+        "    void printpostOrder();",
+        "};"
+      ],
+      "description": "cpp-bst-creat-class"
+  },
+  
+  "cpp-bst-constructor": {
+      "prefix": "cpp-bst-constructor",
+      "body": [
+        "template <class T>",
+        "BST<T>::BST() {",
+        "    root = NULL;",
+        "}"
+      ],
+      "description": "cpp-bst-constructor"
+  },
+
+  "cpp-bst-insert-private": {
+      "prefix": "cpp-bst-insert-private",
+      "body": [
+        "template <class T>",
+        "void BST<T>::insert(T item, node *& leaf) {",
+        "    if (leaf == NULL) {",
+        "        leaf = new node;",
+        "        leaf->item = item;",
+        "        leaf->left = NULL;",
+        "        leaf->right = NULL;",
+        "    } else if (item < leaf->item) {",
+        "        insert(item, leaf->left);",
+        "    } else if (item > leaf->item) {",
+        "        insert(item, leaf->right);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-bst-insert-private"
+  },
+  
+  "cpp-bst-insert-public": {
+      "prefix": "cpp-bst-insert-public",
+      "body": [
+        "template <class T>",
+        "void BST<T>::insert(T item) {",
+        "    insert(item, root);",
+        "}"
+      ],
+      "description": "cpp-bst-insert-public"
+  },
+
+  "cpp-bst-delete-private": {
+      "prefix": "cpp-bst-delete-private",
+      "body": [
+        "template <class T>",
+        "void BST<T>::delete(T item, node *& leaf) {",
+        "    if (leaf == NULL) {",
+        "        return;",
+        "    }",
+        "    if (item < leaf->item) {",
+        "        delete(item, leaf->left);",
+        "    } else if (item > leaf->item) {",
+        "        delete(item, leaf->right);",
+        "    } else {",
+        "        if (leaf->left == NULL && leaf->right == NULL) {",
+        "            delete leaf;",
+        "            leaf = NULL;",
+        "        } else if (leaf->left == NULL) {",
+        "            node *temp = leaf;",
+        "            leaf = leaf->right;",
+        "            delete temp;",
+        "        } else if (leaf->right == NULL) {",
+        "            node *temp = leaf;",
+        "            leaf = leaf->left;",
+        "            delete temp;",
+        "        } else {",
+        "            node *temp = leaf->right;",
+        "            while (temp->left != NULL) {",
+        "                temp = temp->left;",
+        "            }",
+        "            leaf->item = temp->item;",
+        "            delete(temp->item, leaf->right);",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-bst-delete-private"
+  },
+
+  "cpp-bst-delete-public": {
+      "prefix": "cpp-bst-delete-public",
+      "body": [
+        "template <class T>",
+        "void BST<T>::delete(T item) {",
+        "    delete(item, root);",
+        "}"
+      ],
+      "description": "cpp-bst-delete-public"
+  },
+
+  "cpp-bst-destroyTree-private": {
+      "prefix": "cpp-bst-destroyTree-private",
+      "body": [
+        "template <class T>",
+        "void BST<T>::destroyTree(node *& leaf) {",
+        "    if (leaf != NULL) {",
+        "        destroyTree(leaf->left);",
+        "        destroyTree(leaf->right);",
+        "        delete leaf;",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-bst-destroyTree-private"
+  },
+
+  "cpp-bst-destroyTree-public": {
+      "prefix": "cpp-bst-destroyTree-public",
+      "body": [
+        "template <class T>",
+        "void BST<T>::destroyTree() {",
+        "    destroyTree(root);",
+        "}"
+      ],
+      "description": "cpp-bst-destroyTree-public"
+  },
+
+  "cpp-bst-search-private": {
+      "prefix": "cpp-bst-search-private",
+      "body": [
+        "template <class T>",
+        "node *BST<T>::search(int item, node* leaf) {",
+        "    if (leaf != NULL) {",
+        "        if (item == leaf->item) {",
+        "            return leaf;",
+        "        } else if (item < leaf->item) {",
+        "            return search(item, leaf->left);",
+        "        } else {",
+        "            return search(item, leaf->right);",
+        "        }",
+        "    } else {",
+        "        return NULL;",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-bst-search-private"
+  },
+
+  "cpp-bst-search-public": {
+      "prefix": "cpp-bst-search-public",
+      "body": [
+        "template <class T>",
+        "node *BST<T>::search(int item) {",
+        "    return search(item, root);",
+        "}"
+      ],
+      "description": "cpp-bst-search-public"
+  },
+
+  "cpp-bst-inOrder-private": {
+      "prefix": "cpp-bst-inOrder-private",
+      "body": [
+        "template <class T>",
+        "void BST<T>::inOrder(node *leaf) {",
+        "    if (leaf != NULL) {",
+        "        inOrder(leaf->left);",
+        "        cout << leaf->item << \" \";",
+        "        inOrder(leaf->right);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-bst-inOrder-private"
+  },
+
+  "cpp-bst-inOrder-public": {
+      "prefix": "cpp-bst-inOrder-public",
+      "body": [
+        "template <class T>",
+        "void BST<T>::printinOrder() {",
+        "    inOrder(root);",
+        "}"
+      ],
+      "description": "cpp-bst-inOrder-public"
+  },
+
+  "cpp-bst-preOrder-private": {
+      "prefix": "cpp-bst-preOrder-private",
+      "body": [
+        "template <class T>",
+        "void BST<T>::preOrder(node *leaf) {",
+        "    if (leaf != NULL) {",
+        "        cout << leaf->item << \" \";",
+        "        preOrder(leaf->left);",
+        "        preOrder(leaf->right);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-bst-preOrder-private"
+  },
+
+  "cpp-bst-preOrder-public": {
+      "prefix": "cpp-bst-preOrder-public",
+      "body": [
+        "template <class T>",
+        "void BST<T>::printpreOrder() {",
+        "    preOrder(root);",
+        "}"
+      ],
+      "description": "cpp-bst-preOrder-public"
+  },
+
+  "cpp-bst-postOrder-private": {
+      "prefix": "cpp-bst-postOrder-private",
+      "body": [
+        "template <class T>",
+        "void BST<T>::postOrder(node *leaf) {",
+        "    if (leaf != NULL) {",
+        "        postOrder(leaf->left);",
+        "        postOrder(leaf->right);",
+        "        cout << leaf->item << \" \";",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-bst-postOrder-private"
+  },
+
+  "cpp-bst-postOrder-public": {
+      "prefix": "cpp-bst-postOrder-public",
+      "body": [
+        "template <class T>",
+        "void BST<T>::printpostOrder() {",
+        "    postOrder(root);",
+        "}"
+      ],
+      "description": "cpp-bst-postOrder-public"
+  },
+
+  "cpp-recursion-fibo": {
+      "prefix": "cpp-recursion-fibo",
+      "body": [
+        "int fibo(int n) {",
+        "    if (n == 0) {",
+        "        return 0;",
+        "    } else if (n == 1) {",
+        "        return 1;",
+        "    } else {",
+        "        return fibo(n - 1) + fibo(n - 2);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-recursion-fibo"
+  },
+
+  "cpp-recursion-gcd": {
+      "prefix": "cpp-recursion-gcd",
+      "body": [
+        "int gcd(int a, int b) {",
+        "    if (b == 0) {",
+        "        return a;",
+        "    } else {",
+        "        return gcd(b, a % b);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-recursion-gcd"
+  },
+
+  "cpp-recursion-lcm": {
+      "prefix": "cpp-recursion-lcm",
+      "body": [
+        "int lcm(int a, int b) {",
+        "    return a * b / gcd(a, b);",
+        "}"
+      ],
+      "description": "cpp-recursion-lcm"
+  },
+
+  "cpp-recursion-pow": {
+      "prefix": "cpp-recursion-pow",
+      "body": [
+        "int pow(int a, int b) {",
+        "    if (b == 0) {",
+        "        return 1;",
+        "    } else {",
+        "        return a * pow(a, b - 1);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-recursion-pow"
+  },
+
+  "cpp-recursion-sum": {
+      "prefix": "cpp-recursion-sum",
+      "body": [
+        "int sum(int n) {",
+        "    if (n == 0) {",
+        "        return 0;",
+        "    } else {",
+        "        return n + sum(n - 1);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-recursion-sum"
+  },
+
+  "cpp-recursion-fact": {
+      "prefix": "cpp-recursion-fact",
+      "body": [
+        "int fact(int n) {",
+        "    if (n == 0) {",
+        "        return 1;",
+        "    } else {",
+        "        return n * fact(n - 1);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-recursion-fact"
+  },
+
+  "cpp-recursion-ak": {
+      "prefix": "cpp-recursion-ak",
+      "body": [
+        "int ackermann(int m, int n) {",
+        "    if (m == 0) {",
+        "        return n + 1;",
+        "    } else if (n == 0) {",
+        "        return ackermann(m - 1, 1);",
+        "    } else {",
+        "        return ackermann(m - 1, ackermann(m, n - 1));",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-recursion-ackermann"
+  },
+
+  "cpp-recursion-hanoi-tower": {
+      "prefix": "cpp-recursion-hanoi-tower",
+      "body": [
+        "void hanoi(int n, char from, char to, char aux) {",
+        "    if (n == 1) {",
+        "        cout << \"Move disk 1 from rod \" << from << \" to rod \" << to << endl;",
+        "        return;",
+        "    }",
+        "    hanoi(n - 1, from, aux, to);",
+        "    cout << \"Move disk \" << n << \" from rod \" << from << \" to rod \" << to << endl;",
+        "    hanoi(n - 1, aux, to, from);",
+        "}"
+      ],
+      "description": "cpp-recursion-hanoi-tower"
+  },
+
+  "cpp-recursion-perm":{ 
+      "prefix": "cpp-recursion-perm",
+      "body": [
+        "void perm(string s, int l, int r) {",
+        "    if (l == r) {",
+        "        cout << s << endl;",
+        "    } else {",
+        "        for (int i = l; i <= r; i++) {",
+        "            swap(s[l], s[i]);",
+        "            perm(s, l + 1, r);",
+        "            swap(s[l], s[i]);",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-recursion-perm"
+  },
+
+  "cpp-recursion-comb": {
+      "prefix": "cpp-recursion-comb",
+      "body": [
+        "void comb(string s, int l, int r, int index, string data) {",
+        "    if (index == r) {",
+        "        for (int j = 0; j < r; j++) {",
+        "            cout << data[j];",
+        "        }",
+        "        cout << endl;",
+        "        return;",
+        "    }",
+        "    for (int i = l; i <= r && r - i + 1 >= r - index; i++) {",
+        "        data[index] = s[i];",
+        "        comb(s, i + 1, r, index + 1, data);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-recursion-comb"
+  },
+
+  "cpp-recursion-subset": {
+      "prefix": "cpp-recursion-subset",
+      "body": [
+        "void subset(string s, int l, int r, int index, string data) {",
+        "    for (int j = 0; j < index; j++) {",
+        "        cout << data[j];",
+        "    }",
+        "    cout << endl;",
+        "    for (int i = l; i <= r; i++) {",
+        "        data[index] = s[i];",
+        "        subset(s, i + 1, r, index + 1, data);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-recursion-subset"
+  },
+
+  "cpp-recursion-n-queen": {
+      "prefix": "cpp-recursion-n-queen",
+      "body": [
+        "bool isSafe(int board[N][N], int row, int col) {",
+        "    int i, j;",
+        "    for (i = 0; i < col; i++) {",
+        "        if (board[row][i]) {",
+        "            return false;",
+        "        }",
+        "    }",
+        "    for (i = row, j = col; i >= 0 && j >= 0; i--, j--) {",
+        "        if (board[i][j]) {",
+        "            return false;",
+        "        }",
+        "    }",
+        "    for (i = row, j = col; j >= 0 && i < N; i++, j--) {",
+        "        if (board[i][j]) {",
+        "            return false;",
+        "        }",
+        "    }",
+        "    return true;",
+        "}",
+        "",
+        "bool solveNQUtil(int board[N][N], int col) {",
+        "    if (col >= N) {",
+        "        return true;",
+        "    }",
+        "    for (int i = 0; i < N; i++) {",
+        "        if (isSafe(board, i, col)) {",
+        "            board[i][col] = 1;",
+        "            if (solveNQUtil(board, col + 1)) {",
+        "                return true;",
+        "            }",
+        "            board[i][col] = 0;",
+        "        }",
+        "    }",
+        "    return false;",
+        "}",
+        "",
+        "bool solveNQ() {",
+        "    int board[N][N];",
+        "    memset(board, 0, sizeof(board));",
+        "    if (solveNQUtil(board, 0) == false) {",
+        "        cout << \"Solution does not exist\" << endl;",
+        "        return false;",
+        "    }",
+        "    printSolution(board);",
+        "    return true;",
+        "}"
+      ],
+      "description": "cpp-recursion-n-queen"
+  },
+  
+  "cpp-recursion-is-prime": {
+      "prefix": "cpp-recursion-is-prime",
+      "body": [
+        "bool isPrime(int n, int i = 2) {",
+        "    if (n <= 2) {",
+        "        return (n == 2) ? true : false;",
+        "    }",
+        "    if (n % i == 0) {",
+        "        return false;",
+        "    }",
+        "    if (i * i > n) {",
+        "        return true;",
+        "    }",
+        "    return isPrime(n, i + 1);",
+        "}"
+      ],
+      "description": "cpp-recursion-is-prime"
+  },
+  
+  "cpp-recursion-is-palindrome": {
+      "prefix": "cpp-recursion-is-palindrome",
+      "body": [
+        "bool isPalindrome(string s, int l, int r) {",
+        "    if (l >= r) {",
+        "        return true;",
+        "    }",
+        "    if (s[l] != s[r]) {",
+        "        return false;",
+        "    }",
+        "    return isPalindrome(s, l + 1, r - 1);",
+        "}"
+      ],
+      "description": "cpp-recursion-is-palindrome"
+  },
+  
+  "cpp-recursion-happy": {
+      "prefix": "cpp-recursion-happy",
+      "body": [
+        "int sumOfSquares(int n) {",
+        "    int sum = 0;",
+        "    while (n) {",
+        "        sum += (n % 10) * (n % 10);",
+        "        n /= 10;",
+        "    }",
+        "    return sum;",
+        "}",
+        "",
+        "bool isHappy(int n) {",
+        "    int slow = n, fast = n;",
+        "    do {",
+        "        slow = sumOfSquares(slow);",
+        "        fast = sumOfSquares(sumOfSquares(fast));",
+        "    } while (slow != fast);",
+        "    return (slow == 1);",
+        "}"
+      ],
+      "description": "cpp-recursion-happy"
+  },
+  
+  "cpp-recursion-is-power-of-two": {
+      "prefix": "cpp-recursion-is-power-of-two",
+      "body": [
+        "bool isPowerOfTwo(int n) {",
+        "    if (n == 0) {",
+        "        return false;",
+        "    }",
+        "    while (n != 1) {",
+        "        if (n % 2 != 0) {",
+        "            return false;",
+        "        }",
+        "        n = n / 2;",
+        "    }",
+        "    return true;",
+        "}"
+      ],
+      "description": "cpp-recursion-is-power-of-two"
+  },
+
+  "cpp-recursion-dec-to-bin": {
+      "prefix": "cpp-recursion-dec-to-bin",
+      "body": [
+        "void decToBin(int n) {",
+        "    if (n > 1) {",
+        "        decToBin(n / 2);",
+        "    }",
+        "    cout << n % 2;",
+        "}"
+      ],
+      "description": "cpp-recursion-dec-to-bin"
+  },
+
+  "cpp-recursion-dec-to-hex": {
+      "prefix": "cpp-recursion-dec-to-hex",
+      "body": [
+        "void decToHex(int n) {",
+        "    if (n > 1) {",
+        "        decToHex(n / 16);",
+        "    }",
+        "    int rem = n % 16;",
+        "    if (rem < 10) {",
+        "        cout << rem;",
+        "    } else {",
+        "        cout << (char)(rem - 10 + 'A');",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-recursion-dec-to-hex"
+  },
+  
+  "cpp-recursion-bin-to-dec": {
+      "prefix": "cpp-recursion-bin-to-dec",
+      "body": [
+        "int binToDec(int n) {",
+        "    if (n == 0) {",
+        "        return 0;",
+        "    }",
+        "    return (n % 10) + 2 * binToDec(n / 10);",
+        "}"
+      ],
+      "description": "cpp-recursion-bin-to-dec"
+  },
+  
+  "cpp-recursion-bin-to-hex": {
+      "prefix": "cpp-recursion-bin-to-hex",
+      "body": [
+        "int binToDec(int n) {",
+        "    if (n == 0) {",
+        "        return 0;",
+        "    }",
+        "    return (n % 10) + 2 * binToDec(n / 10);",
+        "}",
+        "",
+        "void decToHex(int n) {",
+        "    if (n > 1) {",
+        "        decToHex(n / 16);",
+        "    }",
+        "    int rem = n % 16;",
+        "    if (rem < 10) {",
+        "        cout << rem;",
+        "    } else {",
+        "        cout << (char)(rem - 10 + 'A');",
+        "    }",
+        "}",
+        "",
+        "void binToHex(int n) {",
+        "    decToHex(binToDec(n));",
+        "}"
+      ],
+      "description": "cpp-recursion-bin-to-hex"
+  },
+  
+  "cpp-recursion-hex-to-dec": {
+      "prefix": "cpp-recursion-hex-to-dec",
+      "body": [
+        "int hexToDec(string s) {",
+        "    int n = s.length();",
+        "    int base = 1;",
+        "    int dec_val = 0;",
+        "    for (int i = n - 1; i >= 0; i--) {",
+        "        if (s[i] >= '0' && s[i] <= '9') {",
+        "            dec_val += (s[i] - 48) * base;",
+        "            base = base * 16;",
+        "        } else if (s[i] >= 'A' && s[i] <= 'F') {",
+        "            dec_val += (s[i] - 55) * base;",
+        "            base = base * 16;",
+        "        }",
+        "    }",
+        "    return dec_val;",
+        "}"
+      ],
+      "description": "cpp-recursion-hex-to-dec"
+  },
+
+  "cpp-recursion-hex-to-bin": {
+      "prefix": "cpp-recursion-hex-to-bin",
+      "body": [
+        "int hexToDec(string s) {",
+        "    int n = s.length();",
+        "    int base = 1;",
+        "    int dec_val = 0;",
+        "    for (int i = n - 1; i >= 0; i--) {",
+        "        if (s[i] >= '0' && s[i] <= '9') {",
+        "            dec_val += (s[i] - 48) * base;",
+        "            base = base * 16;",
+        "        } else if (s[i] >= 'A' && s[i] <= 'F') {",
+        "            dec_val += (s[i] - 55) * base;",
+        "            base = base * 16;",
+        "        }",
+        "    }",
+        "    return dec_val;",
+        "}",
+        "",
+        "void decToBin(int n) {",
+        "    if (n > 1) {",
+        "        decToBin(n / 2);",
+        "    }",
+        "    cout << n % 2;",
+        "}",
+        "",
+        "void hexToBin(string s) {",
+        "    decToBin(hexToDec(s));",
+        "}"
+      ],
+      "description": "cpp-recursion-hex-to-bin"
+  },
+  
+  "cpp-recursion-sum-n-fibo": {
+      "prefix": "cpp-recursion-sum-n-fibo",
+      "body": [
+        "int fibo(int n) {",
+        "    if (n <= 1) {",
+        "        return n;",
+        "    }",
+        "    return fibo(n - 1) + fibo(n - 2);",
+        "}",
+        "",
+        "int sumNFibo(int n) {",
+        "    if (n <= 0) {",
+        "        return 0;",
+        "    }",
+        "    return fibo(n) + sumNFibo(n - 1);",
+        "}"
+      ],
+      "description": "cpp-recursion-sum-n-fibo"
+  },
+  
+  "cpp-seletion-sort": {
+      "prefix": "cpp-seletion-sort",
+      "body": [
+        "void selectionSort(int arr[], int n) {",
+        "    for (int i = 0; i < n - 1; i++) {",
+        "        int min = i;",
+        "        for (int j = i + 1; j < n; j++) {",
+        "            if (arr[j] < arr[min]) {",
+        "                min = j;",
+        "            }",
+        "        }",
+        "        int temp = arr[min];",
+        "        arr[min] = arr[i];",
+        "        arr[i] = temp;",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-seletion-sort"
+  },
+  
+  "cpp-insertion-sort": {
+      "prefix": "cpp-insertion-sort",
+      "body": [
+        "void insertionSort(int arr[], int n) {",
+        "    for (int i = 1; i < n; i++) {",
+        "        int key = arr[i];",
+        "        int j = i - 1;",
+        "        while (j >= 0 && arr[j] > key) {",
+        "            arr[j + 1] = arr[j];",
+        "            j--;",
+        "        }",
+        "        arr[j + 1] = key;",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-insertion-sort"
+  },
+  
+  "cpp-quick-sort": {
+      "prefix": "cpp-quick-sort",
+      "body": [
+        "int partition(int arr[], int low, int high) {",
+        "    int pivot = arr[high];",
+        "    int i = low - 1;",
+        "    for (int j = low; j < high; j++) {",
+        "        if (arr[j] < pivot) {",
+        "            i++;",
+        "            int temp = arr[i];",
+        "            arr[i] = arr[j];",
+        "            arr[j] = temp;",
+        "        }",
+        "    }",
+        "    int temp = arr[i + 1];",
+        "    arr[i + 1] = arr[high];",
+        "    arr[high] = temp;",
+        "    return i + 1;",
+        "}",
+        "",
+        "void quickSort(int arr[], int low, int high) {",
+        "    if (low < high) {",
+        "        int pi = partition(arr, low, high);",
+        "        quickSort(arr, low, pi - 1);",
+        "        quickSort(arr, pi + 1, high);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-quick-sort"
+  },
+
+  "cpp-void-quick-sort-2": {
+    "prefix": "cpp-quick-sort-2",
+    "body": [
+      "void quick_sort(int *arr, int left, int right) {",
+      "    int i = left;",
+      "    int j = right;",
+      "    int pivot = arr[(left + right) / 2];",
+      "    int temp;",
+      "    while (i <= j) {",
+      "        while (arr[i] < pivot) {",
+      "            i++;",
+      "        }",
+      "        while (arr[j] > pivot) {",
+      "            j--;",
+      "        }",
+      "        if (i <= j) {",
+      "            temp = arr[i];",
+      "            arr[i] = arr[j];",
+      "            arr[j] = temp;",
+      "            i++;",
+      "            j--;",
+      "        }",
+      "    }",
+      "    if (left < j) {",
+      "        quick_sort(arr, left, j);",
+      "    }",
+      "    if (i < right) {",
+      "        quick_sort(arr, i, right);",
+      "    }",
+      "}"
+    ],
+    "description": "cpp-quick-sort-2"
+  },
+
+  "cpp-merge-sort": {
+      "prefix": "cpp-merge-sort",
+      "body": [
+        "void merge(int arr[], int l, int m, int r) {",
+        "    int n1 = m - l + 1;",
+        "    int n2 = r - m;",
+        "    int L[n1], R[n2];",
+        "    for (int i = 0; i < n1; i++) {",
+        "        L[i] = arr[l + i];",
+        "    }",
+        "    for (int j = 0; j < n2; j++) {",
+        "        R[j] = arr[m + 1 + j];",
+        "    }",
+        "    int i = 0;",
+        "    int j = 0;",
+        "    int k = l;",
+        "    while (i < n1 && j < n2) {",
+        "        if (L[i] <= R[j]) {",
+        "            arr[k] = L[i];",
+        "            i++;",
+        "        } else {",
+        "            arr[k] = R[j];",
+        "            j++;",
+        "        }",
+        "        k++;",
+        "    }",
+        "    while (i < n1) {",
+        "        arr[k] = L[i];",
+        "        i++;",
+        "        k++;",
+        "    }",
+        "    while (j < n2) {",
+        "        arr[k] = R[j];",
+        "        j++;",
+        "        k++;",
+        "    }",
+        "}",
+        "",
+        "void mergeSort(int arr[], int l, int r) {",
+        "    if (l < r) {",
+        "        int m = l + (r - l) / 2;",
+        "        mergeSort(arr, l, m);",
+        "        mergeSort(arr, m + 1, r);",
+        "        merge(arr, l, m, r);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-merge-sort"
+  },
+
+  "cpp-bubble-sort": {
+      "prefix": "cpp-bubble-sort",
+      "body": [
+        "void bubbleSort(int arr[], int n) {",
+        "    for (int i = 0; i < n - 1; i++) {",
+        "        for (int j = 0; j < n - i - 1; j++) {",
+        "            if (arr[j] > arr[j + 1]) {",
+        "                int temp = arr[j];",
+        "                arr[j] = arr[j + 1];",
+        "                arr[j + 1] = temp;",
+        "            }",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-bubble-sort"
+  },
+
+  "cpp-random-quick-sort": {
+      "prefix": "cpp-random-quick-sort",
+      "body": [
+        "int partition(int arr[], int low, int high) {",
+        "    int pivot = arr[high];",
+        "    int i = low - 1;",
+        "    for (int j = low; j < high; j++) {",
+        "        if (arr[j] < pivot) {",
+        "            i++;",
+        "            int temp = arr[i];",
+        "            arr[i] = arr[j];",
+        "            arr[j] = temp;",
+        "        }",
+        "    }",
+        "    int temp = arr[i + 1];",
+        "    arr[i + 1] = arr[high];",
+        "    arr[high] = temp;",
+        "    return i + 1;",
+        "}",
+        "",
+        "int randomPartition(int arr[], int low, int high) {",
+        "    int n = high - low + 1;",
+        "    int pivot = rand() % n;",
+        "    int temp = arr[low + pivot];",
+        "    arr[low + pivot] = arr[high];",
+        "    arr[high] = temp;",
+        "    return partition(arr, low, high);",
+        "}",
+        "",
+        "void randomQuickSort(int arr[], int low, int high) {",
+        "    if (low < high) {",
+        "        int pi = randomPartition(arr, low, high);",
+        "        randomQuickSort(arr, low, pi - 1);",
+        "        randomQuickSort(arr, pi + 1, high);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-random-quick-sort"
+  },
+
+  "cpp-counting-sort": {
+      "prefix": "cpp-counting-sort",
+      "body": [
+        "void countingSort(int arr[], int n) {",
+        "    int max = arr[0];",
+        "    for (int i = 1; i < n; i++) {",
+        "        if (arr[i] > max) {",
+        "            max = arr[i];",
+        "        }",
+        "    }",
+        "    int count[max + 1];",
+        "    for (int i = 0; i < max + 1; i++) {",
+        "        count[i] = 0;",
+        "    }",
+        "    for (int i = 0; i < n; i++) {",
+        "        count[arr[i]]++;",
+        "    }",
+        "    int j = 0;",
+        "    for (int i = 0; i < max + 1; i++) {",
+        "        while (count[i] > 0) {",
+        "            arr[j] = i;",
+        "            j++;",
+        "            count[i]--;",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-counting-sort"
+  },
+  
+  "cpp-radix-sort": {
+      "prefix": "cpp-radix-sort",
+      "body": [
+        "int getMax(int arr[], int n) {",
+        "    int max = arr[0];",
+        "    for (int i = 1; i < n; i++) {",
+        "        if (arr[i] > max) {",
+        "            max = arr[i];",
+        "        }",
+        "    }",
+        "    return max;",
+        "}",
+        "",
+        "void countSort(int arr[], int n, int exp) {",
+        "    int output[n];",
+        "    int count[10] = {0};",
+        "    for (int i = 0; i < n; i++) {",
+        "        count[(arr[i] / exp) % 10]++;",
+        "    }",
+        "    for (int i = 1; i < 10; i++) {",
+        "        count[i] += count[i - 1];",
+        "    }",
+        "    for (int i = n - 1; i >= 0; i--) {",
+        "        output[count[(arr[i] / exp) % 10] - 1] = arr[i];",
+        "        count[(arr[i] / exp) % 10]--;",
+        "    }",
+        "    for (int i = 0; i < n; i++) {",
+        "        arr[i] = output[i];",
+        "    }",
+        "}",
+        "",
+        "void radixSort(int arr[], int n) {",
+        "    int m = getMax(arr, n);",
+        "    for (int exp = 1; m / exp > 0; exp *= 10) {",
+        "        countSort(arr, n, exp);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-radix-sort"
+  },
+  
+  "cpp-heap-sort": {
+      "prefix": "cpp-heap-sort",
+      "body": [
+        "void heapify(int arr[], int n, int i) {",
+        "    int largest = i;",
+        "    int l = 2 * i + 1;",
+        "    int r = 2 * i + 2;",
+        "    if (l < n && arr[l] > arr[largest]) {",
+        "        largest = l;",
+        "    }",
+        "    if (r < n && arr[r] > arr[largest]) {",
+        "        largest = r;",
+        "    }",
+        "    if (largest != i) {",
+        "        int temp = arr[i];",
+        "        arr[i] = arr[largest];",
+        "        arr[largest] = temp;",
+        "        heapify(arr, n, largest);",
+        "    }",
+        "}",
+        "",
+        "void heapSort(int arr[], int n) {",
+        "    for (int i = n / 2 - 1; i >= 0; i--) {",
+        "        heapify(arr, n, i);",
+        "    }",
+        "    for (int i = n - 1; i >= 0; i--) {",
+        "        int temp = arr[0];",
+        "        arr[0] = arr[i];",
+        "        arr[i] = temp;",
+        "        heapify(arr, i, 0);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-heap-sort"
+  },
+  
+  "cpp-bucket-sort": {
+      "prefix": "cpp-bucket-sort",
+      "body": [
+        "void bucketSort(float arr[], int n) {",
+        "    vector<float> b[n];",
+        "    for (int i = 0; i < n; i++) {",
+        "        int bi = n * arr[i];",
+        "        b[bi].push_back(arr[i]);",
+        "    }",
+        "    for (int i = 0; i < n; i++) {",
+        "        sort(b[i].begin(), b[i].end());",
+        "    }",
+        "    int index = 0;",
+        "    for (int i = 0; i < n; i++) {",
+        "        for (int j = 0; j < b[i].size(); j++) {",
+        "            arr[index++] = b[i][j];",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-bucket-sort"
+  },
+  
+  "cpp-comb-sort": {
+      "prefix": "cpp-comb-sort",
+      "body": [
+        "void combSort(int arr[], int n) {",
+        "    int gap = n;",
+        "    bool swapped = true;",
+        "    while (gap != 1 || swapped == true) {",
+        "        gap = max(1, gap / 1.3);",
+        "        swapped = false;",
+        "        for (int i = 0; i < n - gap; i++) {",
+        "            if (arr[i] > arr[i + gap]) {",
+        "                int temp = arr[i];",
+        "                arr[i] = arr[i + gap];",
+        "                arr[i + gap] = temp;",
+        "                swapped = true;",
+        "            }",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-comb-sort"
+  },
+  
+  "cpp-gnome-sort": {
+      "prefix": "cpp-gnome-sort",
+      "body": [
+        "void gnomeSort(int arr[], int n) {",
+        "    int index = 0;",
+        "    while (index < n) {",
+        "        if (index == 0) {",
+        "            index++;",
+        "        }",
+        "        if (arr[index] >= arr[index - 1]) {",
+        "            index++;",
+        "        } else {",
+        "            int temp = arr[index];",
+        "            arr[index] = arr[index - 1];",
+        "            arr[index - 1] = temp;",
+        "            index--;",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-gnome-sort"
+  },
+  
+  "cpp-cycle-sort": {
+      "prefix": "cpp-cycle-sort",
+      "body": [
+        "void cycleSort(int arr[], int n) {",
+        "    for (int cycle_start = 0; cycle_start <= n - 2; cycle_start++) {",
+        "        int item = arr[cycle_start];",
+        "        int pos = cycle_start;",
+        "        for (int i = cycle_start + 1; i < n; i++) {",
+        "            if (arr[i] < item) {",
+        "                pos++;",
+        "            }",
+        "        }",
+        "        if (pos == cycle_start) {",
         "            continue;",
         "        }",
-        "        if (postfix[i] == '+' || postfix[i] == '-' || postfix[i] == '*' || postfix[i] == '/') {",
-        "            temp.pop(op2);",
-        "            temp.pop(op1);",
-        "            if (postfix[i] == '+') {",
-        "                temp.push(op1 + op2);",
-        "            } else if (postfix[i] == '-') {",
-        "                temp.push(op1 - op2);",
-        "            } else if (postfix[i] == '*') {",
-        "                temp.push(op1 * op2);",
-        "            } else if (postfix[i] == '/') {",
-        "                temp.push(op1 / op2);",
+        "        while (item == arr[pos]) {",
+        "            pos += 1;",
+        "        }",
+        "        if (pos != cycle_start) {",
+        "            int temp = item;",
+        "            item = arr[pos];",
+        "            arr[pos] = temp;",
+        "        }",
+        "        while (pos != cycle_start) {",
+        "            pos = cycle_start;",
+        "            for (int i = cycle_start + 1; i < n; i++) {",
+        "                if (arr[i] < item) {",
+        "                    pos += 1;",
+        "                }",
         "            }",
-        "        } else {",
-        "            temp.push(postfix[i] - '0');",
+        "            while (item == arr[pos]) {",
+        "                pos += 1;",
+        "            }",
+        "            if (item != arr[pos]) {",
+        "                int temp = item;",
+        "                item = arr[pos];",
+        "                arr[pos] = temp;",
+        "            }",
         "        }",
         "    }",
-        "    int result;",
-        "    temp.pop(result);",
-        "    return result;",
         "}"
-        ],
-        "description": "cpp-stack-pointer-postfix-evaluate"
-    },
+      ],
+      "description": "cpp-cycle-sort"
+  },
+  
+  "cpp-bogo-sort": {
+      "prefix": "cpp-bogo-sort",
+      "body": [
+        "bool isSorted(int arr[], int n) {",
+        "    while (--n > 1) {",
+        "        if (arr[n] < arr[n - 1]) {",
+        "            return false;",
+        "        }",
+        "    }",
+        "    return true;",
+        "}",
+        "",
+        "void shuffle(int arr[], int n) {",
+        "    for (int i = 0; i < n; i++) {",
+        "        int j = rand() % n;",
+        "        int temp = arr[i];",
+        "        arr[i] = arr[j];",
+        "        arr[j] = temp;",
+        "    }",
+        "}",
+        "",
+        "void bogoSort(int arr[], int n) {",
+        "    while (!isSorted(arr, n)) {",
+        "        shuffle(arr, n);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-bogo-sort"
+  },
+  
+  "cpp-stooge-sort": {
+      "prefix": "cpp-stooge-sort",
+      "body": [
+        "void stoogeSort(int arr[], int l, int h) {",
+        "    if (l >= h) {",
+        "        return;",
+        "    }",
+        "    if (arr[l] > arr[h]) {",
+        "        int temp = arr[l];",
+        "        arr[l] = arr[h];",
+        "        arr[h] = temp;",
+        "    }",
+        "    if (h - l + 1 > 2) {",
+        "        int t = (h - l + 1) / 3;",
+        "        stoogeSort(arr, l, h - t);",
+        "        stoogeSort(arr, l + t, h);",
+        "        stoogeSort(arr, l, h - t);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-stooge-sort"
+  },
+  
+  "cpp-cocktail-sort": {
+      "prefix": "cpp-cocktail-sort",
+      "body": [
+        "void cocktailSort(int arr[], int n) {",
+        "    bool swapped = true;",
+        "    int start = 0;",
+        "    int end = n - 1;",
+        "    while (swapped) {",
+        "        swapped = false;",
+        "        for (int i = start; i < end; ++i) {",
+        "            if (arr[i] > arr[i + 1]) {",
+        "                int temp = arr[i];",
+        "                arr[i] = arr[i + 1];",
+        "                arr[i + 1] = temp;",
+        "                swapped = true;",
+        "            }",
+        "        }",
+        "        if (!swapped) {",
+        "            break;",
+        "        }",
+        "        swapped = false;",
+        "        end = end - 1;",
+        "        for (int i = end - 1; i >= start; i--) {",
+        "            if (arr[i] > arr[i + 1]) {",
+        "                int temp = arr[i];",
+        "                arr[i] = arr[i + 1];",
+        "                arr[i + 1] = temp;",
+        "                swapped = true;",
+        "            }",
+        "        }",
+        "        start = start + 1;",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-cocktail-sort"
+  },
 
-    "cpp-stack-postfix-evaluate2": {
-        "prefix": "cpp-stack-postfix-evaluate2",
-        "body": [
-          "template <class T>",
-          "int Stack<T>::calculatePostfix(string postFix) {",
-          "    Stack<int> s;",
-          "    for (int i = 0; i < postFix.length(); i++) {",
-          "        if (postFix[i] == ' ')",
-          "            continue;",
-          "        else if (postFix[i] == '+') {",
-          "            int a, b;",
-          "            s.pop(a);",
-          "            s.pop(b);",
-          "            s.push(a + b);",
-          "        }",
-          "        else if (postFix[i] == '-') {",
-          "            int a, b;",
-          "            s.pop(a);",
-          "            s.pop(b);",
-          "            s.push(b - a);",
-          "        }",
-          "        else if (postFix[i] == '*') {",
-          "            int a, b;",
-          "            s.pop(a);",
-          "            s.pop(b);",
-          "            s.push(a * b);",
-          "        }",
-          "        else if (postFix[i] == '/') {",
-          "            int a, b;",
-          "            s.pop(a);",
-          "            s.pop(b);",
-          "            s.push(b / a);",
-          "        }",
-          "        else {",
-          "            int a = postFix[i] - '0';",
-          "            s.push(a);",
-          "        }",
-          "    }",
-          "    return s.getTop();",
-          "}"
-        ],
-        "description": "cpp-stack-postfix-evaluate2"
-    },
-
-    "cpp-queue-creat-class": {
-        "prefix": "cpp-queue-creat-class",
-        "body": [
-          "template <class T>",
-          "class Queue",
-          "{",
-          "private:",
-          "    struct node {",
-          "        T item;",
-          "        node *next;",
-          "    };",
-          "    node *head;",
-          "    node *tail;",
-          "public:",
-          "    Queue();",
-          "    void push(T item);",
-          "    void pop();",
-          "    ",
-          "    int getSize();",
-          "    bool isEmpty();",
-          "    T getFront();",
-          "    T getBack();",
-          "};"
-        ],
-        "description": "cpp-queue-creat-class"
-    },
-
-    "cpp-queue-constructor": {
-        "prefix": "cpp-queue-constructor",
-        "body": [
-          "template <class T>",
-          "Queue<T>::Queue() {",
-          "    head = NULL;",
-          "    tail = NULL;",
-          "}"
-        ],
-        "description": "cpp-queue-constructor"
-    },
-    
-    "cpp-queue-push": {
-        "prefix": "cpp-queue-push",
-        "body": [
-          "template <class T>",
-          "void Queue<T>::push(T item) {",
-          "    node *newNode = new node;",
-          "    newNode->item = item;",
-          "    newNode->next = NULL;",
-          "    if (isEmpty()) {",
-          "        head = newNode;",
-          "        tail = newNode;",
-          "    } else {",
-          "        tail->next = newNode;",
-          "        tail = newNode;",
-          "    }",
-          "}"
-        ],
-        "description": "cpp-queue-push"
-    },
-
-    "cpp-queue-pop": {
-        "prefix": "cpp-queue-pop",
-        "body": [
-          "template <class T>",
-          "void Queue<T>::pop() {",
-          "    if (isEmpty()) {",
-          "        return;",
-          "    }",
-          "    node *temp = head;",
-          "    head = head->next;",
-          "    delete temp;",
-          "}"
-        ],
-        "description": "cpp-queue-pop"
-    },
-
-    "cpp-queue-getSize": {
-        "prefix": "cpp-queue-getSize",
-        "body": [
-          "template <class T>",
-          "int Queue<T>::getSize() {",
-          "    int count = 0;",
-          "    node *temp = head;",
-          "    while (temp != NULL) {",
-          "        count++;",
-          "        temp = temp->next;",
-          "    }",
-          "    return count;",
-          "}"
-        ],
-        "description": "cpp-queue-getSize"
-    },
-
-    "cpp-queue-isEmpty": {
-        "prefix": "cpp-queue-isEmpty",
-        "body": [
-          "template <class T>",
-          "bool Queue<T>::isEmpty() {",
-          "    return head == NULL;",
-          "}"
-        ],
-        "description": "cpp-queue-isEmpty"
-    },
-
-    "cpp-queue-getFront": {
-        "prefix": "cpp-queue-getFront",
-        "body": [
-          "template <class T>",
-          "T Queue<T>::getFront() {",
-          "    return head->item;",
-          "}"
-        ],
-        "description": "cpp-queue-getFront"
-    },
-
-    "cpp-queue-getBack": {
-        "prefix": "cpp-queue-getBack",
-        "body": [
-          "template <class T>",
-          "T Queue<T>::getBack() {",
-          "    return tail->item;",
-          "}"
-        ],
-        "description": "cpp-queue-getBack"
-    },
-
-    "cpp-queue-clear": {
-        "prefix": "cpp-queue-clear",
-        "body": [
-          "template <class T>",
-          "void Queue<T>::clear() {",
-          "    while (!isEmpty()) {",
-          "        pop();",
-          "    }",
-          "}"
-        ],
-        "description": "cpp-queue-clear"
-    },
-    
-    "cpp-queue-display": {
-        "prefix": "cpp-queue-display",
-        "body": [
-          "template <class T>",
-          "void Queue<T>::display() {",
-          "    node *temp = head;",
-          "    while (temp != NULL) {",
-          "        cout << temp->item << \" \";",
-          "        temp = temp->next;",
-          "    }",
-          "    cout << endl;",
-          "}"
-        ],
-        "description": "cpp-queue-display"
-    },
-    
-    "cpp-queue-reverse": {
-        "prefix": "cpp-queue-reverse",
-        "body": [
-          "template <class T>",
-          "void Queue<T>::reverse() {",
-          "    if (isEmpty()) {",
-          "        return;",
-          "    }",
-          "    node *temp = head;",
-          "    node *prev = NULL;",
-          "    node *next = NULL;",
-          "    while (temp != NULL) {",
-          "        next = temp->next;",
-          "        temp->next = prev;",
-          "        prev = temp;",
-          "        temp = next;",
-          "    }",
-          "    head = prev;",
-          "}"
-        ],
-        "description": "cpp-queue-reverse"
-    },
-
-    "cpp-bst-creat-class": {
-        "prefix": "cpp-bst-creat-class",
-        "body": [
-          "template <class T>",
-          "class BST",
-          "{",
-          "private:",
-          "    struct node {",
-          "        T item;",
-          "        node *left;",
-          "        node *right;",
-          "    };",
-          "    node *root;",
-          "    void insert(T item, node *& leaf);",
-          "    void delete(T item, node *& leaf);",
-          "    void destroyTree(node *& leaf);",
-          "    node *search(int item, node* leaf)",
-          "    void inOrder(node *root);",
-          "    void preOrder(node *root);",
-          "    void postOrder(node *root);",
-          "public:",
-          "    BST();",
-          "    void insert(T item);",
-          "    void delete(T item);",
-          "    void destroyTree();",
-          "    node *search(int item);",
-          "    void printinOrder();",
-          "    void printpreOrder();",
-          "    void printpostOrder();",
-          "};"
-        ],
-        "description": "cpp-bst-creat-class"
-    },
-    
-    "cpp-bst-constructor": {
-        "prefix": "cpp-bst-constructor",
-        "body": [
-          "template <class T>",
-          "BST<T>::BST() {",
-          "    root = NULL;",
-          "}"
-        ],
-        "description": "cpp-bst-constructor"
-    },
-
-    "cpp-bst-insert-private": {
-        "prefix": "cpp-bst-insert-private",
-        "body": [
-          "template <class T>",
-          "void BST<T>::insert(T item, node *& leaf) {",
-          "    if (leaf == NULL) {",
-          "        leaf = new node;",
-          "        leaf->item = item;",
-          "        leaf->left = NULL;",
-          "        leaf->right = NULL;",
-          "    } else if (item < leaf->item) {",
-          "        insert(item, leaf->left);",
-          "    } else if (item > leaf->item) {",
-          "        insert(item, leaf->right);",
-          "    }",
-          "}"
-        ],
-        "description": "cpp-bst-insert-private"
-    },
-    
-    "cpp-bst-insert-public": {
-        "prefix": "cpp-bst-insert-public",
-        "body": [
-          "template <class T>",
-          "void BST<T>::insert(T item) {",
-          "    insert(item, root);",
-          "}"
-        ],
-        "description": "cpp-bst-insert-public"
-    },
-
-    "cpp-bst-delete-private": {
-        "prefix": "cpp-bst-delete-private",
-        "body": [
-          "template <class T>",
-          "void BST<T>::delete(T item, node *& leaf) {",
-          "    if (leaf == NULL) {",
-          "        return;",
-          "    }",
-          "    if (item < leaf->item) {",
-          "        delete(item, leaf->left);",
-          "    } else if (item > leaf->item) {",
-          "        delete(item, leaf->right);",
-          "    } else {",
-          "        if (leaf->left == NULL && leaf->right == NULL) {",
-          "            delete leaf;",
-          "            leaf = NULL;",
-          "        } else if (leaf->left == NULL) {",
-          "            node *temp = leaf;",
-          "            leaf = leaf->right;",
-          "            delete temp;",
-          "        } else if (leaf->right == NULL) {",
-          "            node *temp = leaf;",
-          "            leaf = leaf->left;",
-          "            delete temp;",
-          "        } else {",
-          "            node *temp = leaf->right;",
-          "            while (temp->left != NULL) {",
-          "                temp = temp->left;",
-          "            }",
-          "            leaf->item = temp->item;",
-          "            delete(temp->item, leaf->right);",
-          "        }",
-          "    }",
-          "}"
-        ],
-        "description": "cpp-bst-delete-private"
-    },
-
-    "cpp-bst-delete-public": {
-        "prefix": "cpp-bst-delete-public",
-        "body": [
-          "template <class T>",
-          "void BST<T>::delete(T item) {",
-          "    delete(item, root);",
-          "}"
-        ],
-        "description": "cpp-bst-delete-public"
-    },
-
-    "cpp-bst-destroyTree-private": {
-        "prefix": "cpp-bst-destroyTree-private",
-        "body": [
-          "template <class T>",
-          "void BST<T>::destroyTree(node *& leaf) {",
-          "    if (leaf != NULL) {",
-          "        destroyTree(leaf->left);",
-          "        destroyTree(leaf->right);",
-          "        delete leaf;",
-          "    }",
-          "}"
-        ],
-        "description": "cpp-bst-destroyTree-private"
-    },
-
-    "cpp-bst-destroyTree-public": {
-        "prefix": "cpp-bst-destroyTree-public",
-        "body": [
-          "template <class T>",
-          "void BST<T>::destroyTree() {",
-          "    destroyTree(root);",
-          "}"
-        ],
-        "description": "cpp-bst-destroyTree-public"
-    },
-
-    "cpp-bst-search-private": {
-        "prefix": "cpp-bst-search-private",
-        "body": [
-          "template <class T>",
-          "node *BST<T>::search(int item, node* leaf) {",
-          "    if (leaf != NULL) {",
-          "        if (item == leaf->item) {",
-          "            return leaf;",
-          "        } else if (item < leaf->item) {",
-          "            return search(item, leaf->left);",
-          "        } else {",
-          "            return search(item, leaf->right);",
-          "        }",
-          "    } else {",
-          "        return NULL;",
-          "    }",
-          "}"
-        ],
-        "description": "cpp-bst-search-private"
-    },
-
-    "cpp-bst-search-public": {
-        "prefix": "cpp-bst-search-public",
-        "body": [
-          "template <class T>",
-          "node *BST<T>::search(int item) {",
-          "    return search(item, root);",
-          "}"
-        ],
-        "description": "cpp-bst-search-public"
-    },
-
-    "cpp-bst-inOrder-private": {
-        "prefix": "cpp-bst-inOrder-private",
-        "body": [
-          "template <class T>",
-          "void BST<T>::inOrder(node *leaf) {",
-          "    if (leaf != NULL) {",
-          "        inOrder(leaf->left);",
-          "        cout << leaf->item << \" \";",
-          "        inOrder(leaf->right);",
-          "    }",
-          "}"
-        ],
-        "description": "cpp-bst-inOrder-private"
-    },
-
-    "cpp-bst-inOrder-public": {
-        "prefix": "cpp-bst-inOrder-public",
-        "body": [
-          "template <class T>",
-          "void BST<T>::printinOrder() {",
-          "    inOrder(root);",
-          "}"
-        ],
-        "description": "cpp-bst-inOrder-public"
-    },
-
-    "cpp-bst-preOrder-private": {
-        "prefix": "cpp-bst-preOrder-private",
-        "body": [
-          "template <class T>",
-          "void BST<T>::preOrder(node *leaf) {",
-          "    if (leaf != NULL) {",
-          "        cout << leaf->item << \" \";",
-          "        preOrder(leaf->left);",
-          "        preOrder(leaf->right);",
-          "    }",
-          "}"
-        ],
-        "description": "cpp-bst-preOrder-private"
-    },
-
-    "cpp-bst-preOrder-public": {
-        "prefix": "cpp-bst-preOrder-public",
-        "body": [
-          "template <class T>",
-          "void BST<T>::printpreOrder() {",
-          "    preOrder(root);",
-          "}"
-        ],
-        "description": "cpp-bst-preOrder-public"
-    },
-
-    "cpp-bst-postOrder-private": {
-        "prefix": "cpp-bst-postOrder-private",
-        "body": [
-          "template <class T>",
-          "void BST<T>::postOrder(node *leaf) {",
-          "    if (leaf != NULL) {",
-          "        postOrder(leaf->left);",
-          "        postOrder(leaf->right);",
-          "        cout << leaf->item << \" \";",
-          "    }",
-          "}"
-        ],
-        "description": "cpp-bst-postOrder-private"
-    },
-
-    "cpp-bst-postOrder-public": {
-        "prefix": "cpp-bst-postOrder-public",
-        "body": [
-          "template <class T>",
-          "void BST<T>::printpostOrder() {",
-          "    postOrder(root);",
-          "}"
-        ],
-        "description": "cpp-bst-postOrder-public"
-    },
-
-    
-
+  "cpp-bitonic-sort": {
+      "prefix": "cpp-bitonic-sort",
+      "body": [
+        "void compAndSwap(int arr[], int i, int j, int dir) {",
+        "    if (dir == (arr[i] > arr[j])) {",
+        "        int temp = arr[i];",
+        "        arr[i] = arr[j];",
+        "        arr[j] = temp;",
+        "    }",
+        "}",
+        "",
+        "void bitonicMerge(int arr[], int low, int cnt, int dir) {",
+        "    if (cnt > 1) {",
+        "        int k = cnt / 2;",
+        "        for (int i = low; i < low + k; i++) {",
+        "            compAndSwap(arr, i, i + k, dir);",
+        "        }",
+        "        bitonicMerge(arr, low, k, dir);",
+        "        bitonicMerge(arr, low + k, k, dir);",
+        "    }",
+        "}",
+        "",
+        "void bitonicSort(int arr[], int low, int cnt, int dir) {",
+        "    if (cnt > 1) {",
+        "        int k = cnt / 2;",
+        "        bitonicSort(arr, low, k, 1);",
+        "        bitonicSort(arr, low + k, k, 0);",
+        "        bitonicMerge(arr, low, cnt, dir);",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-bitonic-sort"
+  },
+  
+  "cpp-pancake-sort": {
+      "prefix": "cpp-pancake-sort",
+      "body": [
+        "int findMax(int arr[], int n) {",
+        "    int mi, i;",
+        "    for (mi = 0, i = 0; i < n; ++i) {",
+        "        if (arr[i] > arr[mi]) {",
+        "            mi = i;",
+        "        }",
+        "    }",
+        "    return mi;",
+        "}",
+        "",
+        "void flip(int arr[], int i) {",
+        "    int temp, start = 0;",
+        "    while (start < i) {",
+        "        temp = arr[start];",
+        "        arr[start] = arr[i];",
+        "        arr[i] = temp;",
+        "        start++;",
+        "        i--;",
+        "    }",
+        "}",
+        "",
+        "void pancakeSort(int arr[], int n) {",
+        "    for (int curr_size = n; curr_size > 1; --curr_size) {",
+        "        int mi = findMax(arr, curr_size);",
+        "        if (mi != curr_size - 1) {",
+        "            flip(arr, mi);",
+        "            flip(arr, curr_size - 1);",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-pancake-sort"
+  },
+  
+  "cpp-tree-sort": {
+      "prefix": "cpp-tree-sort",
+      "body": [
+        "struct Node {",
+        "    int data;",
+        "    struct Node *left;",
+        "    struct Node *right;",
+        "};",
+        "",
+        "struct Node *newNode(int data) {",
+        "    struct Node *node = (struct Node *)malloc(sizeof(struct Node));",
+        "    node->data = data;",
+        "    node->left = NULL;",
+        "    node->right = NULL;",
+        "    return (node);",
+        "}",
+        "",
+        "void storeSorted(Node *root, int arr[], int &i) {",
+        "    if (root != NULL) {",
+        "        storeSorted(root->left, arr, i);",
+        "        arr[i++] = root->data;",
+        "        storeSorted(root->right, arr, i);",
+        "    }",
+        "}",
+        "",
+        "Node *insert(Node *node, int data) {",
+        "    if (node == NULL) {",
+        "        return newNode(data);",
+        "    }",
+        "    if (data < node->data) {",
+        "        node->left = insert(node->left, data);",
+        "    } else {",
+        "        node->right = insert(node->right, data);",
+        "    }",
+        "    return node;",
+        "}",
+        "",
+        "void treeSort(int arr[], int n) {",
+        "    struct Node *root = NULL;",
+        "    root = insert(root, arr[0]);",
+        "    for (int i = 1; i < n; i++) {",
+        "        insert(root, arr[i]);",
+        "    }",
+        "    int i = 0;",
+        "    storeSorted(root, arr, i);",
+        "}"
+      ],
+      "description": "cpp-tree-sort"
+  },
+  
+  "cpp-shell-sort": {
+      "prefix": "cpp-shell-sort",
+      "body": [
+        "void shellSort(int arr[], int n) {",
+        "    for (int gap = n / 2; gap > 0; gap /= 2) {",
+        "        for (int i = gap; i < n; i += 1) {",
+        "            int temp = arr[i];",
+        "            int j;",
+        "            for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {",
+        "                arr[j] = arr[j - gap];",
+        "            }",
+        "            arr[j] = temp;",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "description": "cpp-shell-sort"
+  },
 }

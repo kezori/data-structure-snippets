@@ -240,6 +240,7 @@ All snippets are prefixed with `{languge}-suffix-array` where language is the la
 | `-is-empty`    | `Return True if Suffix Array empty`          |
 | `-get-size`    | `Return size of the Suffix Array`            |
 | `-display`     | `Print value of all Node in the Suffix Array`|
+-->
 
 ### Table of Recursion Snippets
 
@@ -253,13 +254,13 @@ All snippets are prefixed with `{languge}-recursion` where language is the langu
 | `-pow`         | `Return the power of a number`               |
 | `-sum`         | `Return the sum of a number`                 |
 | `-fact`        | `Return the factorial of a number`           |
-| `-perm`        | `Return the permutation of a number`         |
+| `-ak`          | `Return the Akermann function`               |
+| `-perm`        | `Return the permutation of a string`         |
 | `-comb`        | `Return the combination of a number`         |
+| `-subset`      | `Print subset of a string`              |
 | `-is-prime`    | `Return True if a number is prime`           |
-| `-is-palindrome` | `Return True if a number is palindrome`      |
 | `-is-palindrome` | `Return True if a string is palindrome`      |
 | `-is-happy`    | `Return True if a number is happy`           |
-| `-is-ugly`     | `Return True if a number is ugly`            |
 | `-is-power-of-two` | `Return True if a number is power of two`    |
 | `-hanoi-tower` | `Print the steps of Hanoi Tower`             |
 | `-n-queen`     | `Print the steps of N Queen`                 |
@@ -273,15 +274,17 @@ All snippets are prefixed with `{languge}-recursion` where language is the langu
 
 ### Table of Sort Algorithms Snippets
 
+All snippets are prefixed with `{languge}` where language is the language of the snippet. For example, the C++ Sort Algorithms snippets are prefixed with `cpp`.
+
 | Prefix              |Prefix               |
 |---------------------|---------------------|
 | `-selection-sort`   | `comb-sort`         |
-| `insertion-sort`    | `gnome-sort`        |
-| `quick-sort`        | `cycle-sort`        |
-| `merge-sort`        | `bogo-sort`         |
-| `bubble-sort`       | `stooge-sort`       |
-| `random-quick-sort` | `cocktail-sort`     |
-| `counting-sort`     | `bitonic-sort`      |
-| `radix-sort`        | `pancake-sort`      |
-| `heap-sort`         | `tree-sort`         |
-| `bucket-sort`       | `shell-sort`        | -->
+| `-insertion-sort`    | `gnome-sort`        |
+| `-quick-sort`        | `cycle-sort`        |
+| `-merge-sort`        | `bogo-sort`         |
+| `-bubble-sort`       | `stooge-sort`       |
+| `-random-quick-sort` | `cocktail-sort`     |
+| `-counting-sort`     | `bitonic-sort`      |
+| `-radix-sort`        | `pancake-sort`      |
+| `-heap-sort`         | `tree-sort`         |
+| `-bucket-sort`       | `shell-sort`        | 

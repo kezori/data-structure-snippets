@@ -2,7 +2,7 @@
   "name": "data-structure-snippets",
   "displayName": "Data Structure Snippets",
   "description": "Creat Data structure faster than ever",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "Keri Nguyen",
   "repository": {
     "type": "git",
@@ -16,12 +16,13 @@
     "data structure",
     "data structure snippets",
     "snippets",
-    "cpp snippets"
+    "cpp snippets",
+    "cpp"
   ],
   "license": "MIT",
   "icon": "icon.png",
   "engines": {
-    "vscode": "^1.72.0"
+    "vscode": "^1.20.0"
   },
   "categories": [
     "Snippets"
@@ -49,8 +50,8 @@
         "path": "./snippets/java.code-snippets"
       },
       {
-        "language": "c#",
-        "path": "./snippets/c#.code-snippets"
+        "language": "csharp",
+        "path": "./snippets/csharp.code-snippets"
       }
     ]
   }
