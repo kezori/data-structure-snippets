@@ -7,8 +7,7 @@
 
 ### What is this?
 
-This is a collection of snippets for creating data structures and sort alogorithms in C++, C, C#, Java, Python, and JavaScript. The snippets are designed to be used with [VSCode](https://code.visualstudio.com/)
-
+This is a collection of snippets for creating data structures and sort alogorithms in C++ (C, C#, Java, Python, and JavaScript in the future). The snippets are designed to be used with [VSCode](https://code.visualstudio.com/)
 
 
 ### Table of Singly linked list Snippets 
@@ -78,12 +77,12 @@ All snippets are prefixed with `{languge}-bst` where language is the language of
 |----------------|----------------------------------------------|
 | `-creat-class` | `Creat Class BST`                            |
 | `-constructor` | `Creat constructor`                          |
-| `-insert-private`| `Creat void insert in private of class`|
-| `-insert-public` | `Insert a Node` |
-| `-delete-private`| `Creat void delete in private of class`|
-| `-delete-public` | `Delete a Node` |
-| `-search-private`| `Creat void search in private of class`|
-| `-search-public` | `Search a Node` |
+| `-insert-private`| `Creat void insert in private of class`    |
+| `-insert-public` | `Insert a Node`                            |
+| `-delete-private`| `Creat void delete in private of class`    |
+| `-delete-public` | `Delete a Node`                            |
+| `-search-private`| `Creat void search in private of class`    |
+| `-search-public` | `Search a Node`                            |
 | `-inorder-private`      |   |
 | `-preorder-private`     |   |
 | `-postorder-private`    |   |
@@ -257,19 +256,19 @@ All snippets are prefixed with `{languge}-recursion` where language is the langu
 | `-ak`          | `Return the Akermann function`               |
 | `-perm`        | `Return the permutation of a string`         |
 | `-comb`        | `Return the combination of a number`         |
-| `-subset`      | `Print subset of a string`              |
+| `-subset`      | `Print subset of a string`                   |
 | `-is-prime`    | `Return True if a number is prime`           |
-| `-is-palindrome` | `Return True if a string is palindrome`      |
+| `-is-palindrome`| `Return True if a string is palindrome`     |
 | `-is-happy`    | `Return True if a number is happy`           |
-| `-is-power-of-two` | `Return True if a number is power of two`    |
+| `-is-power-of-two`| `Return True if a number is power of two` |
 | `-hanoi-tower` | `Print the steps of Hanoi Tower`             |
 | `-n-queen`     | `Print the steps of N Queen`                 |
 | `-dec-to-bin`  | `Convert a decimal number to binary number`  |
-| `-dec-to-hex`  | `Convert a decimal number to hexadecimal number` |
-| `-bin-to-dec`  | `Convert a binary number to decimal number`  |
-| `-bin-to-hex`  | `Convert a binary number to hexadecimal number` |
-| `-hex-to-dec`  | `Convert a hexadecimal number to decimal number` |
-| `-hex-to-bin`  | `Convert a hexadecimal number to binary number` |
+| `-dec-to-hex`  | `Convert a decimal number to hexadecimal number`|
+| `-bin-to-dec`  | `Convert a binary number to decimal number`|
+| `-bin-to-hex`  | `Convert a binary number to hexadecimal number`|
+| `-hex-to-dec`  | `Convert a hexadecimal number to decimal number`|
+| `-hex-to-bin`  | `Convert a hexadecimal number to binary number`|
 
 
 ### Table of Sort Algorithms Snippets
@@ -279,12 +278,12 @@ All snippets are prefixed with `{languge}` where language is the language of the
 | Prefix              |Prefix               |
 |---------------------|---------------------|
 | `-selection-sort`   | `comb-sort`         |
-| `-insertion-sort`    | `gnome-sort`        |
-| `-quick-sort`        | `cycle-sort`        |
-| `-merge-sort`        | `bogo-sort`         |
-| `-bubble-sort`       | `stooge-sort`       |
-| `-random-quick-sort` | `cocktail-sort`     |
-| `-counting-sort`     | `bitonic-sort`      |
-| `-radix-sort`        | `pancake-sort`      |
-| `-heap-sort`         | `tree-sort`         |
-| `-bucket-sort`       | `shell-sort`        | 
+| `-insertion-sort`   | `gnome-sort`        |
+| `-quick-sort`       | `cycle-sort`        |
+| `-merge-sort`       | `bogo-sort`         |
+| `-bubble-sort`      | `stooge-sort`       |
+| `-random-quick-sort`| `cocktail-sort`     |
+| `-counting-sort`    | `bitonic-sort`      |
+| `-radix-sort`       | `pancake-sort`      |
+| `-heap-sort`        | `tree-sort`         |
+| `-bucket-sort`      | `shell-sort`        | 
