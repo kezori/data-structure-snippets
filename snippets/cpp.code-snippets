@@ -2176,5 +2176,26 @@
       ],
       "description": "cpp-recursion-int-to-string"
   },
+  "cpp-start": {
+    "prefix": "cpp-start",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "",
+      "#ifndef ${1:/*define*/}",
+      "#define ${1:/*define*/}",
+      "${2:/*code*/}",
+      "#endif // ${1:/*define*/}",
+      "",
+      "int main () {",
+      "    ",
+      "    ifstream fin(${3:\"output.txt\"})",
+      "    ofstream fout(${4:\"input.txt\"})",
+      "    system(\"pause\");",
+      "    return 0;",
+      "}"
+    ],
+    "description": "cpp-start"
+  }
 }
 
