@@ -269,6 +269,9 @@ All snippets are prefixed with `{languge}-recursion` where language is the langu
 | `-bin-to-hex`  | `Convert a binary number to hexadecimal number`|
 | `-hex-to-dec`  | `Convert a hexadecimal number to decimal number`|
 | `-hex-to-bin`  | `Convert a hexadecimal number to binary number`|
+| `-string-to-int`| `Convert a string to integer`                |
+| `-int-to-string`| `Convert an integer to string`               |
+
 
 
 ### Table of Sort Algorithms Snippets

@@ -238,7 +238,7 @@
   },
 
   "cpp-stack-creat-class": {
-      "prefix": "cpp-ll-creat-class",
+      "prefix": "cpp-stack-creat-class",
       "body": [
         "template <class T>",
         "class Stack {",
@@ -1482,6 +1482,7 @@
   "cpp-seletion-sort": {
       "prefix": "cpp-seletion-sort",
       "body": [
+        "// n is the size of the array",
         "void selectionSort(int arr[], int n) {",
         "    for (int i = 0; i < n - 1; i++) {",
         "        int min = i;",
@@ -1502,6 +1503,7 @@
   "cpp-insertion-sort": {
       "prefix": "cpp-insertion-sort",
       "body": [
+        "// n is the size of the array",
         "void insertionSort(int arr[], int n) {",
         "    for (int i = 1; i < n; i++) {",
         "        int key = arr[i];",
@@ -1520,6 +1522,7 @@
   "cpp-quick-sort": {
       "prefix": "cpp-quick-sort",
       "body": [
+        "// low is the starting index and high is the ending index",
         "int partition(int arr[], int low, int high) {",
         "    int pivot = arr[high];",
         "    int i = low - 1;",
@@ -1551,6 +1554,7 @@
   "cpp-void-quick-sort-2": {
     "prefix": "cpp-quick-sort-2",
     "body": [
+      "// left is the starting index and right is the ending index",
       "void quick_sort(int *arr, int left, int right) {",
       "    int i = left;",
       "    int j = right;",
@@ -1585,6 +1589,7 @@
   "cpp-merge-sort": {
       "prefix": "cpp-merge-sort",
       "body": [
+        "// l is the starting index, r is the ending index, m is the middle index",
         "void merge(int arr[], int l, int m, int r) {",
         "    int n1 = m - l + 1;",
         "    int n2 = r - m;",
@@ -2140,4 +2145,36 @@
       ],
       "description": "cpp-shell-sort"
   },
+
+  "cpp-recursion-string-to-int": {
+      "prefix": "cpp-recursion-string-to-int",
+      "body": [
+        "// n is the length of the string",
+        "int stringToInt(string str, int n) {",
+        "    if (n == 1) {",
+        "        return str[0] - '0';",
+        "    }",
+        "    int digit = str[n - 1] - '0';",
+        "    int smallAns = stringToInt(str, n - 1);",
+        "    return smallAns * 10 + digit;",
+        "}"
+      ],
+      "description": "cpp-recursion-string-to-int"
+  },
+
+  "cpp-recursion-int-to-string": {
+      "prefix": "cpp-recursion-int-to-string",
+      "body": [
+        "string intToString(int n) {",
+        "    if (n == 0) {",
+        "        return \"\";",
+        "    }",
+        "    int digit = n % 10;",
+        "    string smallAns = intToString(n / 10);",
+        "    return smallAns + to_string(digit);",
+        "}"
+      ],
+      "description": "cpp-recursion-int-to-string"
+  },
 }
+
